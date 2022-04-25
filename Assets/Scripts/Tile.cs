@@ -22,12 +22,12 @@ public class Tile : MonoBehaviour {
     public void tileSetup(Vector3 pos)
     {
         this.position = pos;
-
         this.transform.position = position;
     }
     public void setSolid()
     {
         gameObject.AddComponent<BoxCollider2D>();
+        this.gameObject.layer = 12;
     }
     public void AnimateTile()
     {

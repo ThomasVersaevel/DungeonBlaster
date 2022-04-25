@@ -41,7 +41,7 @@ public class Skeleton : AbstractEnemy
         }
     }
 
-    public override void Attack()
+    public override void MoveToTarget()
     {
         rb.velocity = playerVector.normalized * ms;
         if (playerDistance < attackRange && !attacking)

@@ -48,8 +48,16 @@ public class EventSystem : MonoBehaviour
     {
         foreach (GameObject portal in portals)
         { //spawn a unit at the transform position of the portal
-            GameObject unit = Instantiate(Skeleton, portal.transform.position, transform.rotation);
-            activeUnits.Add(unit);
+            if (Random.Range(0, 1) > 0.5)
+            {
+                GameObject unit = Instantiate(Skeleton, portal.transform.position, transform.rotation);
+                activeUnits.Add(unit);
+            }
+            else
+            {
+                GameObject unit = Instantiate(Golem, portal.transform.position, transform.rotation);
+                activeUnits.Add(unit);
+            }
         }
     }
 

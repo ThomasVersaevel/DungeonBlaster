@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public abstract class AbstractEnemy : MonoBehaviour
 {
-
     private Color ogColor;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
@@ -14,6 +14,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     private float moveTime = 2f;
     private float movementTimer;
     protected Vector3 direction;
+    AIPath aiPath;
 
     public float ms;
     public float hitpoints = 3;
@@ -32,13 +33,14 @@ public abstract class AbstractEnemy : MonoBehaviour
         delayCountdown = delay;
         movementTimer = moveTime;
         ResetColor();
+        aiPath = gameObject.GetComponent<AIPath>();
     }
     public void UpdateAbstract()
     {
         
-        if (calculatePlayerDistance() < visionRange)
+        if (CalculatePlayerDistance() < visionRange)
         {
-            Attack();
+            MoveToTarget();
         }
         else
         {
@@ -59,17 +61,25 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     }
 
-    public float calculatePlayerDistance()
+    public float CalculatePlayerDistance()
     {
         playerVector = GameObject.Find("Player").transform.position - transform.position;
         playerDistance = Mathf.Sqrt(Mathf.Pow(playerVector.x, 2) + Mathf.Pow(playerVector.y, 2));
         return playerDistance;
     }
 
-    public virtual void Attack()
+    public virtual void MoveToTarget()
     {
-        rb.velocity = playerVector.normalized * ms;
-       // direction = playerVector; //this is for sprite rotation
+        aiPath.destination = GameObject.Find("Player").transform.position;
+        if (aiPath.desiredVelocity.x >= ms)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        } else if (aiPath.desiredVelocity.x <= ms)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        // rb.velocity = playerVector.normalized * ms;
+        // direction = playerVector; //this is for sprite rotation
     }
 
     public void Idle()
