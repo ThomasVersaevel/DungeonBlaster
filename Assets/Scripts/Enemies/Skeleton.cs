@@ -31,19 +31,11 @@ public class Skeleton : AbstractEnemy
         {
             anim.SetBool("move", false);
         }
-        if (rb.velocity.x > 0)
-        {
-            sr.flipX = false;
-        }
-        else
-        {
-            sr.flipX = true;
-        }
     }
 
     public override void MoveToTarget()
     {
-        rb.velocity = playerVector.normalized * ms;
+        //rb.velocity = playerVector.normalized * ms;
         if (playerDistance < attackRange && !attacking)
         {
             attacking = true;

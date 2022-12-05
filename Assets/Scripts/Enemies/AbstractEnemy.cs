@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
 public abstract class AbstractEnemy : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     private float moveTime = 2f;
     private float movementTimer;
     protected Vector3 direction;
-    AIPath aiPath;
+    //AIPathing aiPath;
 
     public float ms;
     public float hitpoints = 3;
@@ -33,19 +32,10 @@ public abstract class AbstractEnemy : MonoBehaviour
         delayCountdown = delay;
         movementTimer = moveTime;
         ResetColor();
-        aiPath = gameObject.GetComponent<AIPath>();
+        //aiPath = gameObject.GetComponent<AIPathing>();
     }
     public void UpdateAbstract()
     {
-        
-        if (CalculatePlayerDistance() < visionRange)
-        {
-            MoveToTarget();
-        }
-        else
-        {
-            Idle();
-        }
         if (rb.velocity.x > 0)
         {
             sr.flipX = true;
@@ -70,44 +60,9 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     public virtual void MoveToTarget()
     {
-        aiPath.destination = GameObject.Find("Player").transform.position;
-        if (aiPath.desiredVelocity.x >= ms)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        } else if (aiPath.desiredVelocity.x <= ms)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+        // all done by AIPath
         // rb.velocity = playerVector.normalized * ms;
         // direction = playerVector; //this is for sprite rotation
-    }
-
-    public void Idle()
-    {
-        if (isMoving)
-        {
-            movementTimer -= Time.deltaTime;
-            rb.velocity = direction * ms;
-
-            if (movementTimer < 0f)
-            {
-                isMoving = false;
-                movementTimer = moveTime * Random.Range(5, 11) / 10;
-            }
-        }
-        else
-        {
-            delayCountdown -= Time.deltaTime;
-            rb.velocity = Vector2.zero;
-
-            if (delayCountdown < 0f)
-            {
-                isMoving = true;
-                delayCountdown = delay * Random.Range(0, 11) / 10;
-
-                direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-            }
-        }
     }
 
     void FlashRed()
