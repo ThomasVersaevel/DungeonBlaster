@@ -23,7 +23,6 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     protected float playerDistance;
     protected Vector3 playerVector;
-    protected float visionRange; //range in wich the enemy will approach the player
     protected bool attacking = false;
 
     // Start is called before the first frame update
@@ -94,7 +93,8 @@ public abstract class AbstractEnemy : MonoBehaviour
             //coll.rigidbody.AddForce(new Vector2(1, 1));
         } else if (coll.gameObject.tag == "Tile")
         { //when hitting wall
-            rb.velocity = new Vector2(2, 2);
+            // let aipathing handle this
+            //rb.velocity = new Vector2(2, 2);
         } else if (coll.gameObject.tag == "Projectile")
         {
             //already handled in the projectile itself.

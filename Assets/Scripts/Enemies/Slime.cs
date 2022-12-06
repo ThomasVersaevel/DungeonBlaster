@@ -17,7 +17,6 @@ public class Slime : AbstractEnemy
         SetupSlimeStage(stage);
         gameObject.GetComponent<ParticleSystem>().Play();
         SlimeTrail = TrailObject.GetComponent<TrailRenderer>();
-        visionRange = 4;
     }
 
     public void SetupSlimeStage(int stage)

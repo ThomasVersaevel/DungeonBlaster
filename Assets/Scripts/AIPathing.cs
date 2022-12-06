@@ -16,7 +16,7 @@ public class AIPathing : MonoBehaviour
     public LayerMask obstacleMask;
 
     // The minimum distance that the game object will maintain from the obstacles
-    public float obstacleAvoidanceDistance = 0.5f;
+    public float obstacleDetectionRadius = 0.2f;
 
     // The maximum angle that the game object can turn in a single frame
     public float maxTurnAngle = 180f;
@@ -41,20 +41,19 @@ public class AIPathing : MonoBehaviour
         //transform.Rotate(0, 0, angle);
 
         // Raycast to check if there are any obstacles in the direction of the target
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, obstacleAvoidanceDistance, obstacleMask);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, obstacleDetectionRadius, direction, obstacleDetectionRadius, obstacleMask);
         if (hit.collider != null)
         {
-            print("Obstacle dtected");
-            // If an obstacle is detected, move in the opposite direction
-            transform.position -= transform.forward * speed * Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            print("Obstacle detected");
+            // If an obstacle is detected, move around it
+            Vector2 newDirection = Quaternion.Euler(0, 0, 90) * direction;
+            direction = Vector2.Lerp(direction, newDirection, 0.5f);
         }
-        else
-        {
-            // If there are no obstacles, move towards the target
-            transform.position += transform.forward * speed * Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        }
+
+        // If there are no obstacles, move towards the target
+        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        
     }
 }
 

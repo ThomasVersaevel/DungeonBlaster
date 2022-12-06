@@ -43,7 +43,6 @@ public class EventSystem : MonoBehaviour
         }
     }
 
-
     private void SendWave()
     {
         foreach (GameObject portal in portals)

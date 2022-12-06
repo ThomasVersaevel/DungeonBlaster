@@ -14,7 +14,6 @@ public class Skeleton : AbstractEnemy
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         hitpoints = 3;
-        visionRange = 5.5f;
         attackRange = 1.3f; //1.3 is melee
         attackSpeed = 1.6f;
     }
@@ -23,14 +22,9 @@ public class Skeleton : AbstractEnemy
     void Update()
     {
         UpdateAbstract();
-        if (rb.velocity.magnitude > 0f)
-        {
-            anim.SetBool("move", true);
-        }
-        else
-        {
-            anim.SetBool("move", false);
-        }
+
+        anim.SetBool("move", true);
+    
     }
 
     public override void MoveToTarget()
