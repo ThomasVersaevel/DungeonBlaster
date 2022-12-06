@@ -33,6 +33,7 @@ public class World : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Random.InitState(12345); // seed the random number generator
         //Lists to keep tilesets, 0, 1 are floor - 2 is regular wall - 3, 4 are corrupted, rest is arbitrary
         CastleList = new Sprite[9]  {castleFloorTile,   castleMarbleFloorTile,  castleWallTile, castleWallTileCorrupted,    castleWallTileEye,  castleWallTileCurve,    null,                  null,            null};
         CaveList = new Sprite[9]    { caveFloorTile,    caveFloorTile,          caveWallTile,   caveWallTileTentacle,       caveWallTileSpike,  caveWallTileSpike,      caveRiverHorizontal, caveRiverVertical, caveRiverJunction};
@@ -90,7 +91,7 @@ public class World : MonoBehaviour
         {
             for (int j = 0; j < height; j++) // collumn wise map gen
             {
-                if (i == 0 || j == 0 || i == 26 || j == 26) //create walls around map
+                if (i == 0 || j == 0 || i == width-2 || j == height-2) //create walls around map
                 {
                     if (Random.Range(0, 10) <= 1)
                     { //10% chance for corupt
