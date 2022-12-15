@@ -7,6 +7,7 @@ public class Golem : AbstractEnemy
     // Start is called before the first frame update
     void Start()
     {
+        ms = 1;
         rb = gameObject.GetComponent<Rigidbody2D>();
         hitpoints = 5;
     }

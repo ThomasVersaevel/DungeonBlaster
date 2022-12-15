@@ -26,6 +26,8 @@ public class World : MonoBehaviour
 
     private Sprite[] CastleList;
     private Sprite[] CaveList;
+    private Sprite[] WallTiles;
+    private Sprite[] FloorTiles;
     private int[] tileMatrix;
 
     private Sprite currentTile;
@@ -34,13 +36,16 @@ public class World : MonoBehaviour
     void Start()
     {
         Random.InitState(12345); // seed the random number generator
-        //Lists to keep tilesets, 0, 1 are floor - 2 is regular wall - 3, 4 are corrupted, rest is arbitrary
-        CastleList = new Sprite[9]  {castleFloorTile,   castleMarbleFloorTile,  castleWallTile, castleWallTileCorrupted,    castleWallTileEye,  castleWallTileCurve,    null,                  null,            null};
+                                 // Lists to keep tilesets, 0, 1 are floor - 2 is regular wall - 3, 4 are corrupted, rest is arbitrary
+                                 // CastleList = new Sprite[9]  {castleFloorTile,   castleMarbleFloorTile,  castleWallTile, castleWallTileCorrupted,    castleWallTileEye,  castleWallTileCurve,    null,                  null,            null};
+        FloorTiles = new Sprite[2] {castleFloorTile, castleFloorTile };
+        WallTiles = new Sprite[4] { castleWallTile, castleWallTileCorrupted, castleWallTileEye, castleWallTileCurve};
+
         CaveList = new Sprite[9]    { caveFloorTile,    caveFloorTile,          caveWallTile,   caveWallTileTentacle,       caveWallTileSpike,  caveWallTileSpike,      caveRiverHorizontal, caveRiverVertical, caveRiverJunction};
-        InitializeSetting(CastleList);
+        InitializeSetting();
         //generateSpawnRoom(CastleList);
         //roomFromTxt(CastleList);
-        roomByLoop(CastleList);
+        roomByLoop();
     }
 
     // Update is called once per frame
@@ -49,12 +54,12 @@ public class World : MonoBehaviour
         
     }
 
-    private void InitializeSetting(Sprite[] sprites)
+    private void InitializeSetting()
     {
-        int width = 25;
-        int height = 25;
+        int width = 26;
+        int height = 26;
 
-        currentTile = sprites[2];//wall
+        currentTile = WallTiles[0];//wall
         for (int i = -10; i <= 30; i++)
         {
             for (int j = -10; j <= 30; j++)
@@ -65,10 +70,10 @@ public class World : MonoBehaviour
                     TheTile.SendMessage("tileSetup", new Vector3(i, j, 0));
                     if (Random.Range(0, 10) <= 1)
                     { //10% chance for corupt
-                        currentTile = sprites[Random.Range(3, 6)];
+                        currentTile = WallTiles[Random.Range(0, WallTiles.Length)];
                     } else
                     {
-                        currentTile = sprites[2];
+                        currentTile = WallTiles[0];
                     }
                     TheTile.GetComponent<SpriteRenderer>().sprite = currentTile;
                 }
@@ -81,7 +86,7 @@ public class World : MonoBehaviour
         return currentTile;
     }
 
-    void roomByLoop(Sprite[] sprites)
+    void roomByLoop()
     {
         int width = 27;
         int height = 27;
@@ -95,22 +100,28 @@ public class World : MonoBehaviour
                 {
                     if (Random.Range(0, 10) <= 1)
                     { //10% chance for corupt
-                        currentTile = sprites[Random.Range(3, 6)];
+                        currentTile = WallTiles[Random.Range(0, WallTiles.Length)];
                         GameObject t = (Instantiate(Tile, new Vector3(i, j, 0), Quaternion.identity));
                         t.GetComponent<Tile>().setSolid();
                         t.GetComponent<Tile>().AnimateTile();
                     }
                     else
                     {
-                        currentTile = sprites[2];
+                        currentTile = WallTiles[0];
                         GameObject t = (Instantiate(Tile, new Vector3(i, j, 0), Quaternion.identity));
                         t.GetComponent<SpriteRenderer>().sprite = currentTile;
                         t.GetComponent<Tile>().setSolid();
                     }
                 }
                 else
-                { //if unknown symbol make a floor tile
-                    currentTile = sprites[0];
+                { 
+                    if (Random.Range(0, 25) <= 1) // slightly different tile 1/25 chance
+                    {
+                        currentTile = FloorTiles[Random.Range(1, FloorTiles.Length)];
+                    } else
+                    {
+                        currentTile = FloorTiles[0];
+                    }
                     GameObject t = (Instantiate(Tile, new Vector3(i, j, 0), Quaternion.identity));
                     //t.SendMessage("tileSetup", new Vector3(i, j, 0));
                     t.GetComponent<SpriteRenderer>().sprite = currentTile;
@@ -119,7 +130,7 @@ public class World : MonoBehaviour
         }
     }
 
-
+    // deprecated
     void roomFromTxt(Sprite[] sprites) // 0 and 1 for floor, 2 is wall 3 4 are corrupted rest is arbitrary.
     {
         int width = 25;
@@ -180,6 +191,7 @@ public class World : MonoBehaviour
         }
     }
 
+    // deprecated
     void generateSpawnRoom(Sprite[] sprites)
     {
         int width = 25;

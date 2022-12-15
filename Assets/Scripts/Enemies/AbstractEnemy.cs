@@ -35,6 +35,8 @@ public abstract class AbstractEnemy : MonoBehaviour
     }
     public void UpdateAbstract()
     {
+        playerVector = GameObject.Find("Player").transform.position - transform.position;
+        MoveToTarget();
         if (rb.velocity.x > 0)
         {
             sr.flipX = true;
@@ -47,18 +49,19 @@ public abstract class AbstractEnemy : MonoBehaviour
         {
             Death();
         }
-
     }
 
     public float CalculatePlayerDistance()
     {
-        playerVector = GameObject.Find("Player").transform.position - transform.position;
         playerDistance = Mathf.Sqrt(Mathf.Pow(playerVector.x, 2) + Mathf.Pow(playerVector.y, 2));
         return playerDistance;
     }
 
     public virtual void MoveToTarget()
     {
+        Vector2 moveDir = playerVector.normalized * ms * Time.deltaTime;
+        transform.position += new Vector3(moveDir.x, moveDir.y, 0);
+
         // all done by AIPath
         // rb.velocity = playerVector.normalized * ms;
         // direction = playerVector; //this is for sprite rotation

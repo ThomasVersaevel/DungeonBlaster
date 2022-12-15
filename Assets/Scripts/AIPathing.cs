@@ -30,9 +30,8 @@ public class AIPathing : MonoBehaviour
     {
         // Calculate the direction from the current position to the target position
         Vector2 direction = target.position - transform.position;
-
         // Calculate the angle between the current forward direction of the game object and the direction to the target
-        float angle = Vector2.Angle(transform.forward, direction);
+        //float angle = Vector2.Angle(transform.forward, direction);
 
         //// Clamp the angle to the maximum turn angle
         //angle = Mathf.Min(angle, maxTurnAngle);
@@ -41,19 +40,18 @@ public class AIPathing : MonoBehaviour
         //transform.Rotate(0, 0, angle);
 
         // Raycast to check if there are any obstacles in the direction of the target
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, obstacleDetectionRadius, direction, obstacleDetectionRadius, obstacleMask);
-        if (hit.collider != null)
-        {
-            print("Obstacle detected");
-            // If an obstacle is detected, move around it
-            Vector2 newDirection = Quaternion.Euler(0, 0, 90) * direction;
-            direction = Vector2.Lerp(direction, newDirection, 0.5f);
-        }
+        //RaycastHit2D hit = Physics2D.CircleCast(transform.position, obstacleDetectionRadius, direction, obstacleDetectionRadius, obstacleMask);
+        //if (hit.collider != null)
+        //{
+        //    print("Obstacle detected");
+        //    // If an obstacle is detected, move around it
+        //    Vector2 newDirection = Quaternion.Euler(0, 0, 90) * direction;
+        //    direction = Vector2.Lerp(direction, newDirection, 0.5f);
+        //}
 
         // If there are no obstacles, move towards the target
-        transform.position += transform.forward * speed * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        
+        Vector2 moveDir = direction.normalized * speed * Time.deltaTime;
+        transform.position += new Vector3(moveDir.x, moveDir.y, 0);
     }
 }
 

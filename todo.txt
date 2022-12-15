@@ -1,0 +1,19 @@
+Pathing towards player + around obstacles
+Better tile saving in world script
+
+New tileset for lvl 1 (grassy plains)
+Variation in ground tiles (castle)
+Tileset bug with animated tiles and outer ring
+
+enemies with projectiles
+enemies with shields (divine shield esq)
+
+Weather effects like rain and lightning
+Paralax scrolling map
+Boss fights
+loot tables
+weapons
+
+Mobile port
+Main menu
+refactor all sendMessage invocations

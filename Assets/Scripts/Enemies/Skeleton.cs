@@ -11,6 +11,7 @@ public class Skeleton : AbstractEnemy
     // Start is called before the first frame update
     void Start()
     {
+        ms = 2;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         hitpoints = 3;
@@ -22,14 +23,16 @@ public class Skeleton : AbstractEnemy
     void Update()
     {
         UpdateAbstract();
-
+        
         anim.SetBool("move", true);
     
     }
 
     public override void MoveToTarget()
     {
-        //rb.velocity = playerVector.normalized * ms;
+        Vector2 moveDir = playerVector.normalized * ms * Time.deltaTime;
+        transform.position += new Vector3(moveDir.x, moveDir.y, 0);
+
         if (playerDistance < attackRange && !attacking)
         {
             attacking = true;
