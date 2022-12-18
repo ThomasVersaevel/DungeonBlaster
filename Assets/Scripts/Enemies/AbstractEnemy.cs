@@ -86,7 +86,7 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     public virtual void Death()
     {
-        GameObject.Find("EventSystem").GetComponent<EventSystem>().MakeDeathParticles(transform.position);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<EventSystem>().MakeDeathParticles(transform.position);
         Destroy(gameObject);
     }
 
