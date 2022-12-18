@@ -32,6 +32,9 @@ public class World : MonoBehaviour
 
     private Sprite currentTile;
 
+    private int width;
+    private int height;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +45,16 @@ public class World : MonoBehaviour
         WallTiles = new Sprite[4] { castleWallTile, castleWallTileCorrupted, castleWallTileEye, castleWallTileCurve};
 
         CaveList = new Sprite[9]    { caveFloorTile,    caveFloorTile,          caveWallTile,   caveWallTileTentacle,       caveWallTileSpike,  caveWallTileSpike,      caveRiverHorizontal, caveRiverVertical, caveRiverJunction};
+
+        // TODO: change to level selector
+        width = 75;
+        height = 75;
+
+
         InitializeSetting();
         //generateSpawnRoom(CastleList);
         //roomFromTxt(CastleList);
-        roomByLoop();
+        generateLevel();
     }
 
     // Update is called once per frame
@@ -56,8 +65,6 @@ public class World : MonoBehaviour
 
     private void InitializeSetting()
     {
-        int width = 26;
-        int height = 26;
 
         currentTile = WallTiles[0];//wall
         for (int i = -10; i <= 30; i++)
@@ -86,10 +93,51 @@ public class World : MonoBehaviour
         return currentTile;
     }
 
+    void generateLevel()
+    {
+
+        // create open map
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++) // collumn wise map gen
+            {
+                if (i == 0 || j == 0 || i == width - 2 || j == height - 2) //create walls around map
+                {
+                    if (Random.Range(0, 10) <= 1)
+                    { //10% chance for corupt
+                        currentTile = WallTiles[Random.Range(0, WallTiles.Length)];
+                        GameObject t = (Instantiate(Tile, new Vector3(i, j, 0), Quaternion.identity));
+                        t.GetComponent<Tile>().setSolid();
+                        t.GetComponent<Tile>().AnimateTile();
+                    }
+                    else
+                    {
+                        currentTile = WallTiles[0];
+                        GameObject t = (Instantiate(Tile, new Vector3(i, j, 0), Quaternion.identity));
+                        t.GetComponent<SpriteRenderer>().sprite = currentTile;
+                        t.GetComponent<Tile>().setSolid();
+                    }
+                }
+                else
+                {
+                    if (Random.Range(0, 25) <= 1) // slightly different tile 1/25 chance
+                    {
+                        currentTile = FloorTiles[Random.Range(1, FloorTiles.Length)];
+                    }
+                    else
+                    {
+                        currentTile = FloorTiles[0];
+                    }
+                    GameObject t = (Instantiate(Tile, new Vector3(i, j, 0), Quaternion.identity));
+                    //t.SendMessage("tileSetup", new Vector3(i, j, 0));
+                    t.GetComponent<SpriteRenderer>().sprite = currentTile;
+                }
+            }
+        }
+    }
+
     void roomByLoop()
     {
-        int width = 27;
-        int height = 27;
 
         // create open map
         for (int i = 0; i < width; i++)

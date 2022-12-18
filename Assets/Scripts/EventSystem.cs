@@ -45,19 +45,7 @@ public class EventSystem : MonoBehaviour
 
     private void SendWave()
     {
-        foreach (GameObject portal in portals)
-        { //spawn a unit at the transform position of the portal
-            if (Random.Range(0, 1) > 0.5)
-            {
-                GameObject unit = Instantiate(Skeleton, portal.transform.position, transform.rotation);
-                activeUnits.Add(unit);
-            }
-            else
-            {
-                GameObject unit = Instantiate(Golem, portal.transform.position, transform.rotation);
-                activeUnits.Add(unit);
-            }
-        }
+        
     }
 
     public void MakeDeathParticles(Vector3 pos)

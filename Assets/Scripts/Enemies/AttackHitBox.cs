@@ -19,7 +19,7 @@ public class AttackHitBox : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            coll.gameObject.SendMessage("TakeDamage");
+            coll.gameObject.GetComponent<Player>().TakeDamage();
         }
     }
 }

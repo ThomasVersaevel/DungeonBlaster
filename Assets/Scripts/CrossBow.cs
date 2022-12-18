@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrossBow: Weapon 
+public class CrossBow: AWeapon 
 {
     
    // Start is called before the first frame update

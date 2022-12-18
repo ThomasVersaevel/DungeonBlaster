@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 6;
-        maxHealth = 6;
+        health = 1;
+        maxHealth = 1;
         ms = 4;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
         {
             Movement();
         }
-
 
         anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("moveY", Input.GetAxisRaw("Vertical"));

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public abstract class AWeapon : MonoBehaviour
 {
     public SpriteRenderer sr;
     private float angle;
     public GameObject projectile;
     public float attackSpeed;
+    public float projectileSpeed;
     public float attackTimer;
     public float damage;
     protected AudioSource auS;
@@ -47,7 +48,7 @@ public abstract class Weapon : MonoBehaviour
             attackTimer -= Time.deltaTime;
         }
     }
-    public void UpdateMeleeRotation()
+    public void UpdateMeleeRotation(float offsetAngle)
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 5.23f;
@@ -57,7 +58,7 @@ public abstract class Weapon : MonoBehaviour
         mousePos.y = mousePos.y - objectPos.y;
 
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90+offsetAngle));
 
         if (Input.GetMouseButtonDown(0) && attackTimer < 0)
         {
@@ -71,8 +72,8 @@ public abstract class Weapon : MonoBehaviour
     }
     public void Shoot(Vector3 mousePos)
     {
-        GameObject proj = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, angle))) as GameObject;
-        proj.GetComponent<Rigidbody2D>().velocity = mousePos * 0.1f;
+        GameObject proj = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, angle-90))) as GameObject;
+        proj.GetComponent<Rigidbody2D>().velocity = mousePos.normalized * projectileSpeed;
         proj.GetComponent<Projectile>().damage = damage;
         //auS.Play();
     }

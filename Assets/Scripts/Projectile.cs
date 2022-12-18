@@ -6,7 +6,6 @@ public class Projectile : MonoBehaviour
 {
 
     public float damage;
-    public float nig;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +22,29 @@ public class Projectile : MonoBehaviour
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            coll.gameObject.SendMessage("TakeDamage", damage);
+            coll.gameObject.GetComponent<AbstractEnemy>().TakeDamage(damage); 
             Destroy(gameObject.GetComponent<BoxCollider2D>());
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject);
 
 
-        } else
+        } else if (coll.gameObject.tag == "Tile")
         {
             Destroy(gameObject.GetComponent<BoxCollider2D>());
-            Destroy(gameObject, 3); 
+            Destroy(gameObject); 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Enemy")
+        {
+            coll.gameObject.GetComponent<AbstractEnemy>().TakeDamage(damage); 
+            Destroy(gameObject.GetComponent<BoxCollider2D>());
+            Destroy(gameObject);
+        }
+        else if (coll.gameObject.tag == "Tile")
+        {
+            Destroy(gameObject.GetComponent<BoxCollider2D>());
+            Destroy(gameObject);
         }
     }
 }

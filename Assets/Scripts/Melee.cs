@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee : Weapon
+public class Melee : AWeapon
 {
 
     // Start is called before the first frame update
@@ -12,11 +12,12 @@ public class Melee : Weapon
         auS = gameObject.GetComponent<AudioSource>();
         attackSpeed = 0.5f;
         damage = 1f;
+        projectileSpeed = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateMeleeRotation();
+        UpdateMeleeRotation(0);
     }
 }
