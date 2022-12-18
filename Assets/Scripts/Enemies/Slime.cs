@@ -52,8 +52,8 @@ public class Slime : AbstractEnemy
     public override void Death() //activate particles, spawn two smaller slimes, destroy big slime
     {
         stage++;
-        GameObject childSlime = Instantiate(slime, transform.position, Quaternion.identity);
-        GameObject childSlime2 = Instantiate(slime, transform.position, Quaternion.identity);
+        GameObject childSlime = Instantiate(slime, transform.position-playerVector.normalized, Quaternion.identity);
+        GameObject childSlime2 = Instantiate(slime, transform.position-playerVector.normalized, Quaternion.identity);
         childSlime.SendMessage("SetupSlimeStage", stage);
         childSlime2.SendMessage("SetupSlimeStage", stage);
         childSlime.SendMessage("ResetColor");

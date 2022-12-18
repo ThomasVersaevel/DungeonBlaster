@@ -16,7 +16,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     //AIPathing aiPath;
 
     public float ms;
-    public float hitpoints = 3;
+    public float hitpoints;
     public float attackRange;
     public float attackSpeed;
     protected float attackTimer;
@@ -37,14 +37,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     {
         playerVector = GameObject.Find("Player").transform.position - transform.position;
         MoveToTarget();
-        if (rb.velocity.x > 0)
-        {
-            sr.flipX = true;
-        }
-        else
-        {
-            sr.flipX = false;
-        }
+        
         if (hitpoints <= 0)
         {
             Death();
@@ -61,6 +54,14 @@ public abstract class AbstractEnemy : MonoBehaviour
     {
         Vector2 moveDir = playerVector.normalized * ms * Time.deltaTime;
         transform.position += new Vector3(moveDir.x, moveDir.y, 0);
+        if (moveDir.x > 0)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
 
         // all done by AIPath
         // rb.velocity = playerVector.normalized * ms;
