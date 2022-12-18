@@ -11,6 +11,9 @@ public class EventSystem : MonoBehaviour
     public GameObject Slime;
     public GameObject Skeleton;
     public GameObject Golem;
+    public GameObject Bat;
+
+    private Vector3 playerPos;
 
     public float spawnDelay;
     private float spawnCountdown;
@@ -42,10 +45,21 @@ public class EventSystem : MonoBehaviour
             spawnCountdown -= Time.deltaTime;
         }
     }
-
+    // Spawn enemy units around the players view (>8 units distance)
     private void SendWave()
     {
-        
+        playerPos = GameObject.Find("Player").transform.position;
+
+        Vector3 xDir = new Vector3(8, 0, 0);
+        Vector3 yDir = new Vector3(0, 8, 0);
+
+        int unitCount = 4;
+        for (int i = 0; i < unitCount; i++)
+        {   // spawn units outside view based on playerpos (check for out of world bounds)
+            if (false) { }
+            GameObject unit = Instantiate(Bat, playerPos + yDir, transform.rotation);
+        }
+
     }
 
     public void MakeDeathParticles(Vector3 pos)

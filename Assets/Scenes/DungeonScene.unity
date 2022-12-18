@@ -442,7 +442,8 @@ MonoBehaviour:
   Skeleton: {fileID: 5666088566999026712, guid: f6362188dda67fc46989920272262ae5,
     type: 3}
   Golem: {fileID: 3306559639590848252, guid: 9cc3fcfcb240df94a84aca2792dcfdd2, type: 3}
-  spawnDelay: 10
+  Bat: {fileID: 4472043079577599864, guid: 4587da3d9fd322a40b7baf18f0e23c48, type: 3}
+  spawnDelay: 3
 --- !u!4 &1048281319
 Transform:
   m_ObjectHideFlags: 0
@@ -455,7 +456,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1297373000 stripped
 SpriteRenderer:
@@ -534,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 1131772273549869858, guid: 79c0f08927b7eb34f86920fb69459a89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1131772273549869858, guid: 79c0f08927b7eb34f86920fb69459a89,
         type: 3}
@@ -692,7 +693,7 @@ PrefabInstance:
     - target: {fileID: 1131772273549869858, guid: 79c0f08927b7eb34f86920fb69459a89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1131772273549869858, guid: 79c0f08927b7eb34f86920fb69459a89,
         type: 3}
@@ -841,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 2716322372986868024, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2716322372986868024, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}
