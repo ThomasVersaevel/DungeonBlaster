@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5599963275493778435}
   sr: {fileID: 1200219675098422220}
+  xpDrop: {fileID: 0}
   ms: 2.5
   hitpoints: 5
   attackRange: 0
@@ -258,6 +259,7 @@ MonoBehaviour:
   stage: 1
   slime: {fileID: 3780288170307958729}
   TrailObject: {fileID: 1802700517}
+  size: 1
 --- !u!50 &5599963275493778435
 Rigidbody2D:
   serializedVersion: 4

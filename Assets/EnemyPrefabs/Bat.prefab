@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4472043079577599870}
   sr: {fileID: 4472043079577599866}
+  xpDrop: {fileID: 4957943886400040943, guid: 8c16533bca6f90443bb9df97120c4d2e, type: 3}
   ms: 0
   hitpoints: 0
   attackRange: 0

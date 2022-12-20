@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public abstract class AProjectile : MonoBehaviour
 {
 
     public float damage;
@@ -22,12 +22,9 @@ public class Projectile : MonoBehaviour
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            coll.gameObject.GetComponent<AbstractEnemy>().TakeDamage(damage); 
-            Destroy(gameObject.GetComponent<BoxCollider2D>());
-            Destroy(gameObject);
-
-
-        } else if (coll.gameObject.tag == "Tile")
+            EnemyHit(coll.gameObject);
+        }
+        else if (coll.gameObject.tag == "Tile")
         {
             Destroy(gameObject.GetComponent<BoxCollider2D>());
             Destroy(gameObject); 
@@ -37,14 +34,20 @@ public class Projectile : MonoBehaviour
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            coll.gameObject.GetComponent<AbstractEnemy>().TakeDamage(damage); 
-            Destroy(gameObject.GetComponent<BoxCollider2D>());
-            Destroy(gameObject);
+            EnemyHit(coll.gameObject);
+
         }
         else if (coll.gameObject.tag == "Tile")
         {
             Destroy(gameObject.GetComponent<BoxCollider2D>());
             Destroy(gameObject);
         }
+    }
+    // method to be overriden by exploding projectiles and such
+    private void EnemyHit(GameObject enemy)
+    {
+        enemy.GetComponent<AbstractEnemy>().TakeDamage(damage);
+        Destroy(gameObject.GetComponent<BoxCollider2D>());
+        Destroy(gameObject);
     }
 }

@@ -9,6 +9,7 @@ public class Slime : AbstractEnemy
     public GameObject slime;
     private TrailRenderer SlimeTrail;
     public GameObject TrailObject;
+    public float size;
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +27,17 @@ public class Slime : AbstractEnemy
         {
             hitpoints = 5;
             //SlimeTrail.startWidth = 1;
-            transform.localScale = new Vector3(2, 2, 1);
+            transform.localScale = new Vector3(size, size, size);
         } else if (stage == 2)
         {
             hitpoints = 3;
             //SlimeTrail.startWidth = 0.8f;
-            transform.localScale = new Vector3(1.5f, 1.5f, 1);
+            transform.localScale = new Vector3(size-0.5f, size - 0.5f, size - 0.5f);
         } else if (stage == 3)
         {
             hitpoints = 1;
             //SlimeTrail.startWidth = 0.6f;
-            transform.localScale = new Vector3(1f, 1f, 1);
+            transform.localScale = new Vector3(size - 1f, size - 1f, size - 1f);
         } else
         {
             base.Death();

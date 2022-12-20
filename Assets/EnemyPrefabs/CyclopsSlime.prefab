@@ -250,8 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1afe9ed0101ce845a9867f815d64d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  sr: {fileID: 0}
+  rb: {fileID: 1259411359039991092}
+  sr: {fileID: 7147248284142521148}
+  xpDrop: {fileID: 2398759924850089809, guid: 87c95e7020e11b047a964bbd45de41d9, type: 3}
   ms: 2.5
   hitpoints: 20
   attackRange: 0
@@ -259,6 +260,7 @@ MonoBehaviour:
   stage: 1
   slime: {fileID: 7147248284142521150}
   TrailObject: {fileID: 1842426074814800790}
+  size: 2
 --- !u!61 &6270318941609673613
 BoxCollider2D:
   m_ObjectHideFlags: 0

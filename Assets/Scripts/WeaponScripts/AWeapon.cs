@@ -23,20 +23,20 @@ public abstract class AWeapon : MonoBehaviour
     public void UpdateRotation()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 5.23f;
 
         Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+       
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        if (angle < -90 || angle > 90)
+        if (angle < 0)
         {
-            sr.flipY = true;
+            sr.flipX = false;
         } else
         {
-            sr.flipY = false;
+            sr.flipX = true;
         }
 
         if (Input.GetMouseButtonDown(0) && attackTimer < 0)
@@ -51,7 +51,6 @@ public abstract class AWeapon : MonoBehaviour
     public void UpdateMeleeRotation(float offsetAngle)
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 5.23f;
 
         Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
         mousePos.x = mousePos.x - objectPos.x;
@@ -59,7 +58,14 @@ public abstract class AWeapon : MonoBehaviour
 
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90+offsetAngle));
-
+        if (angle < 90)
+        {
+            sr.flipX = false;
+        }
+        else
+        {
+            sr.flipX = true;
+        }
         if (Input.GetMouseButtonDown(0) && attackTimer < 0)
         {
             attackTimer = attackSpeed;
@@ -70,11 +76,11 @@ public abstract class AWeapon : MonoBehaviour
             attackTimer -= Time.deltaTime;
         }
     }
-    public void Shoot(Vector3 mousePos)
+    public virtual void Shoot(Vector3 mousePos)
     {
         GameObject proj = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, angle-90))) as GameObject;
         proj.GetComponent<Rigidbody2D>().velocity = mousePos.normalized * projectileSpeed;
-        proj.GetComponent<Projectile>().damage = damage;
+        proj.GetComponent<AProjectile>().damage = damage;
         //auS.Play();
     }
 }

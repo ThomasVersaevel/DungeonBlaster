@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     private AudioSource auS;
     private BoxCollider2D box;
 
+    private int level;
+    private int curXP;
+
     private int health;
     private int maxHealth;
 
@@ -109,6 +112,13 @@ public class Player : MonoBehaviour
         {
             healthContainer.transform.GetChild(i).gameObject.SetActive(false);
         }
+    }
+
+    public void GainXP(int xp)
+    {
+        curXP += xp;
+        // if level up do things here
+
     }
 
     private void Movement()

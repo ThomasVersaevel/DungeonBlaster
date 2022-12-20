@@ -13,6 +13,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     private float moveTime = 2f;
     private float movementTimer;
     protected Vector3 direction;
+    public GameObject xpDrop;
     //AIPathing aiPath;
 
     public float ms;
@@ -86,6 +87,7 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     public virtual void Death()
     {
+        Instantiate(xpDrop, transform.position, transform.rotation);
         GameObject.FindGameObjectWithTag("GameController").GetComponent<EventSystem>().MakeDeathParticles(transform.position);
         Destroy(gameObject);
     }

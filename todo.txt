@@ -10,9 +10,18 @@ enemies with shields (divine shield esq)
 
 Weather effects like rain and lightning
 Paralax scrolling map
-Boss fights
+Boss fights - IronRevenant
 loot tables
 weapons
+
+Forest lvl
+Slime lvl
+
+Event system:
+	- Holds items picked up so far
+	- Holds xp bar progress
+	- On level up allow to upgrade a picked up item
+	- needs a menu
 
 Mobile port
 Main menu
