@@ -94,15 +94,13 @@ public abstract class AbstractEnemy : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         { //when hitting player, already handled in player
-            //coll.rigidbody.AddForce(new Vector2(1, 1));
+            coll.gameObject.GetComponent<Player>().TakeDamage();
         } else if (coll.gameObject.tag == "Tile")
         { //when hitting wall
-            // let aipathing handle this
-            //rb.velocity = new Vector2(2, 2);
+
         } else if (coll.gameObject.tag == "Projectile")
         {
             //already handled in the projectile itself.
         }
     }
-
 }

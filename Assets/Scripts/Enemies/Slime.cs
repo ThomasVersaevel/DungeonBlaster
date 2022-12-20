@@ -14,6 +14,7 @@ public class Slime : AbstractEnemy
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
         SetupSlimeStage(stage);
         gameObject.GetComponent<ParticleSystem>().Play();
         SlimeTrail = TrailObject.GetComponent<TrailRenderer>();
@@ -59,12 +60,5 @@ public class Slime : AbstractEnemy
         childSlime.SendMessage("ResetColor");
         childSlime2.SendMessage("ResetColor"); //workaround for the red slime spawning every time
         Destroy(gameObject);
-    }
-    private void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag == "Player")
-        {
-            coll.gameObject.SendMessage("TakeDamage");
-        }
     }
 }

@@ -20,12 +20,16 @@ public class World : MonoBehaviour
     public Sprite caveRiverHorizontal;
     public Sprite caveRiverVertical;
     public Sprite caveRiverJunction;
-
+    //FIELD
+    public Sprite fieldTile3;
+    public Sprite fieldTile1;
+    public Sprite fieldTile2;
     //Array to keep current sprites
-  
+
 
     private Sprite[] CastleList;
     private Sprite[] CaveList;
+    private Sprite[] FieldList;
     private Sprite[] WallTiles;
     private Sprite[] FloorTiles;
     private int[] tileMatrix;
@@ -41,15 +45,16 @@ public class World : MonoBehaviour
         Random.InitState(12345); // seed the random number generator
                                  // Lists to keep tilesets, 0, 1 are floor - 2 is regular wall - 3, 4 are corrupted, rest is arbitrary
                                  // CastleList = new Sprite[9]  {castleFloorTile,   castleMarbleFloorTile,  castleWallTile, castleWallTileCorrupted,    castleWallTileEye,  castleWallTileCurve,    null,                  null,            null};
-        FloorTiles = new Sprite[2] {castleFloorTile, castleFloorTile };
+        //FloorTiles = new Sprite[2] {castleFloorTile, castleFloorTile };
         WallTiles = new Sprite[4] { castleWallTile, castleWallTileCorrupted, castleWallTileEye, castleWallTileCurve};
 
-        CaveList = new Sprite[9]    { caveFloorTile,    caveFloorTile,          caveWallTile,   caveWallTileTentacle,       caveWallTileSpike,  caveWallTileSpike,      caveRiverHorizontal, caveRiverVertical, caveRiverJunction};
+        FloorTiles = new Sprite[3] {fieldTile1, fieldTile2, fieldTile3 };
+
+        //WallTiles = new Sprite[3] { fieldTile1, fieldTile2, fieldTile3 };
 
         // TODO: change to level selector
         width = 75;
         height = 75;
-
 
         InitializeSetting();
         //generateSpawnRoom(CastleList);
@@ -66,7 +71,7 @@ public class World : MonoBehaviour
     private void InitializeSetting()
     {
 
-        currentTile = WallTiles[0];//wall
+        currentTile = WallTiles[0]; //wall
         for (int i = -10; i <= 30; i++)
         {
             for (int j = -10; j <= 30; j++)
@@ -95,7 +100,6 @@ public class World : MonoBehaviour
 
     void generateLevel()
     {
-
         // create open map
         for (int i = 0; i < width; i++)
         {

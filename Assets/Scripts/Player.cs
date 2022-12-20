@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 1;
-        maxHealth = 1;
+        health = 6;
+        maxHealth = 6;
         ms = 4;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
