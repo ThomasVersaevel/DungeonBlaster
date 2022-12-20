@@ -68,7 +68,6 @@ public class Player : MonoBehaviour
             Invoke("EndInvincibilityFrames", 0.5f);
             invincible = true;
 
-
             Invoke("FlashColor", 0.0f);
             Invoke("ResetColor", 0.1f);
             Invoke("FlashColor", 0.2f);
