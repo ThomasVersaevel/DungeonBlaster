@@ -26,3 +26,14 @@ Event system:
 Mobile port
 Main menu
 refactor all sendMessage invocations
+
+Level up ideas:
+
+When level up you can choose
+- stats
+	- DMG
+	- Speed
+	- Regen
+- items
+	- Weapons to upgrade
+- Combinations?

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
 
     private GameObject healthContainer;
     private float ms;
@@ -14,8 +16,10 @@ public class Player : MonoBehaviour
     private AudioSource auS;
     private BoxCollider2D box;
 
-    private int level;
+    public TMP_Text levelText;
+    private int level = 1;
     private int curXP;
+    private int reqXP;
 
     private int health;
     private int maxHealth;
@@ -26,6 +30,7 @@ public class Player : MonoBehaviour
         health = 6;
         maxHealth = 6;
         ms = 4;
+        reqXP = 5; // (first lvl);
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
@@ -91,7 +96,7 @@ public class Player : MonoBehaviour
     void FlashColor()
     {
         sr.color = new Color32(220, 220, 220, 180);
-        
+
     }
     void ResetColor()
     {
@@ -116,7 +121,29 @@ public class Player : MonoBehaviour
     public void GainXP(int xp)
     {
         curXP += xp;
-        // if level up do things here
+        if (curXP > reqXP)
+        {
+            curXP -= reqXP; // carry over xp
+            LevelUp();
+        }
+    }
+    private void LevelUp() // vampsurvivors uses 10, 13, 16 reqXP increments
+    {
+        if (level < 20)
+        {
+            reqXP = reqXP + 10;
+        }
+        else if (level < 40)
+        {
+            reqXP = reqXP + 13;
+        }
+        else if (level < 100)
+        {
+            reqXP = reqXP + 16;
+        }
+        level++;
+        // UI changes:
+        levelText.text = level.ToString();
 
     }
 
@@ -124,11 +151,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
         { //x
-            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * ms, rb.velocity.y/1.5f);
+            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * ms, rb.velocity.y / 1.5f);
         }
         if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
         {//y
-            rb.velocity = new Vector2(rb.velocity.x/1.5f, Input.GetAxisRaw("Vertical") * ms);
+            rb.velocity = new Vector2(rb.velocity.x / 1.5f, Input.GetAxisRaw("Vertical") * ms);
         }
         if (Input.GetAxisRaw("Horizontal") <= 0.5f && Input.GetAxisRaw("Horizontal") >= -0.5f)
         { //x standstill
