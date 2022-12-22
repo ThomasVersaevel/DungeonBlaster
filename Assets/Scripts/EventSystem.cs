@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EventSystem : MonoBehaviour
 {
+    public bool spawning; // debug
+
     private GameObject[] portals;
     private List<GameObject> activeUnits;
     public GameObject DeathParticles;
@@ -41,7 +43,7 @@ public class EventSystem : MonoBehaviour
                 activeUnits.Remove(obj);
             }
         }
-        if (spawnCountdown < 0 || activeUnits.Count <= 0)
+        if ((spawnCountdown < 0 || activeUnits.Count <= 0) && spawning)
         {
             SendWave();
             spawnCountdown = spawnDelay;

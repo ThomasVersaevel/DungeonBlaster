@@ -6,6 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    public Camera camera;
+    public RectTransform canvasRect;
 
     private GameObject healthContainer;
     private float ms;
@@ -16,6 +18,9 @@ public class Player : MonoBehaviour
     private AudioSource auS;
     private BoxCollider2D box;
 
+    public GameObject XpBar; // starts at y: -5.81 and goes up to 0
+    private float defaultXpBarPos = -5.81f;
+    private float speed = 5.81f; // xp bar move speed
     public TMP_Text levelText;
     private int level = 1;
     private int curXP;
@@ -50,6 +55,8 @@ public class Player : MonoBehaviour
 
         anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("moveY", Input.GetAxisRaw("Vertical"));
+
+       
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
@@ -121,9 +128,25 @@ public class Player : MonoBehaviour
     public void GainXP(int xp)
     {
         curXP += xp;
+        //print(defaultXpBarPos * ((float)curXP / (float)reqXP));
+        // bar has to move in positive y direction from -5.81 to 0. 
+
+        //XpBar.transform.position = new Vector3(0, defaultXpBarPos * ((float)curXP / (float)reqXP), 0);
+        Vector3 canvasSpacePos;// = XpBar.transform.position;
+
+        //RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, 
+        //    Vector3.MoveTowards(XpBar.transform.position, new Vector3(0, defaultXpBarPos * ((float)curXP / (float)reqXP), 0), speed), camera, 
+        //    out canvasSpacePos);
+
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect,
+            new Vector3(0, ((float)curXP / (float)reqXP), 0), camera,
+            out canvasSpacePos);
+
+        XpBar.transform.position += canvasSpacePos;
         if (curXP > reqXP)
         {
             curXP -= reqXP; // carry over xp
+            XpBar.transform.position = new Vector3(0, defaultXpBarPos, 0) + transform.position;
             LevelUp();
         }
     }
