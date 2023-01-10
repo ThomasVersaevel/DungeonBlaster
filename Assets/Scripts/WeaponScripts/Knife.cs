@@ -20,27 +20,17 @@ public class Knife : AWeapon
     void Update()
     {
         UpdateMeleeRotation(0);
-        //if (Input.GetMouseButtonDown(0) && attackTimer < 0)
-        //{   // if shooting move the knife in hand to simulate throw
-
-        //    attackAnim = true;
-        //    Vector3 mousePos = Input.mousePosition;
-        //    Shoot(mousePos);
-        //}
-        //if (!attackAnim)
-        //{
-        //    UpdateMeleeRotation(0);
-        //} else
-        //{
-        //    transform.rotation = Quaternion.Euler(0, rotateAmount, 0) * ;
-        //}
+        level = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getLevel();
 
     }
-    //public override void Shoot(Vector3 mousePos)
-    //{
-    //    rotation += 500 * Time.deltaTime;
-    //    gameObject.transform.rotation = Quaternion.Euler(0, 0, rotation);
 
-    //    base.Shoot(mousePos);
-    //}
+    public override void Shoot(Vector3 mousePos)
+    {
+        rotation += 500 * Time.deltaTime;
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, rotation);
+        for (int i = 0; i < level; i++) { // one knife per lvl
+            int angleOffset = 8 + level * 2;
+            base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mousePos);
+        }
+    }
 }

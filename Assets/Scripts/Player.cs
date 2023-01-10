@@ -124,6 +124,11 @@ public class Player : MonoBehaviour
             healthContainer.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
+    // returns level to weapons
+    public int getLevel()
+    {
+        return level;
+    }
 
     public void GainXP(int xp)
     {
@@ -141,6 +146,8 @@ public class Player : MonoBehaviour
         RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect,
             new Vector3(0, ((float)curXP / (float)reqXP), 0), camera,
             out canvasSpacePos);
+
+        //XpBar.anchorPosition
 
         XpBar.transform.position += canvasSpacePos;
         if (curXP > reqXP)

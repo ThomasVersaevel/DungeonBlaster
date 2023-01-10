@@ -12,6 +12,7 @@ public abstract class AWeapon : MonoBehaviour
     public float attackTimer;
     public float damage;
     protected AudioSource auS;
+    protected int level = 1;
 
     // Start is called before the first frame update
     void Start()

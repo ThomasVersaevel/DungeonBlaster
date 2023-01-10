@@ -8,7 +8,7 @@ public class RainbowGradient : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     // The speed at which the rainbow gradient will move
-    public float gradientMoveSpeed = 0.5f;
+    public float gradientMoveSpeed = 0.3f;
 
     // The offset for the rainbow gradient
     private float gradientOffset = 0.0f;
