@@ -35,12 +35,11 @@ public abstract class AProjectile : MonoBehaviour
         if (coll.gameObject.tag == "Enemy")
         {
             EnemyHit(coll.gameObject);
-
         }
         else if (coll.gameObject.tag == "Tile")
         {
-            Destroy(gameObject.GetComponent<BoxCollider2D>());
-            Destroy(gameObject);
+            //Destroy(gameObject.GetComponent<BoxCollider2D>());
+            //Destroy(gameObject);
         }
     }
     // method to be overriden by exploding projectiles and such

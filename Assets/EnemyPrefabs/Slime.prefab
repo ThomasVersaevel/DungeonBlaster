@@ -251,12 +251,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5599963275493778435}
   sr: {fileID: 1200219675098422220}
-  xpDrop: {fileID: 0}
+  xpDrop: {fileID: 4957943886400040943, guid: 8c16533bca6f90443bb9df97120c4d2e, type: 3}
   ms: 2.5
   hitpoints: 5
   attackRange: 0
   attackSpeed: 0
   stage: 1
+  maxStage: 2
   slime: {fileID: 3780288170307958729}
   TrailObject: {fileID: 1802700517}
   size: 1

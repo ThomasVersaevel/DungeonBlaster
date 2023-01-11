@@ -238,6 +238,7 @@ MonoBehaviour:
   attackRange: 0
   attackSpeed: 0
   stage: 1
+  maxStage: 3
   slime: {fileID: 1215451118367965405}
   TrailObject: {fileID: 1274485280}
   size: 1.5

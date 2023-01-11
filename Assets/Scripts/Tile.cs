@@ -29,10 +29,4 @@ public class Tile : MonoBehaviour {
         gameObject.AddComponent<BoxCollider2D>();
         this.gameObject.layer = 12;
     }
-    public void AnimateTile()
-    {
-        Animator anim = gameObject.AddComponent<Animator>();
-        anim.runtimeAnimatorController = Resources.Load("EyeWall") as RuntimeAnimatorController;
-        //anim.Play("CastleWallTileCorrupt_"+Random.Range(0, 11));
-    }
 }

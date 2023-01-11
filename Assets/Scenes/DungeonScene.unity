@@ -357,28 +357,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9ae4479e8ed194eb8cdd5c98094464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tile: {fileID: 7610241125033830823, guid: 9fd94b1b7106b4340b77eed18e823f5b, type: 3}
-  castleWallTile: {fileID: 21300000, guid: 59ae895c491e997479fe77903b7662b5, type: 3}
-  castleWallTileCorrupted: {fileID: 21300000, guid: 050519842fe713d4d8d17958f5636cd3,
-    type: 3}
-  castleWallTileEye: {fileID: 21300000, guid: c239f4b4951c4ab4eaf2fe00d41bd52d, type: 3}
-  castleWallTileCurve: {fileID: 21300000, guid: c911dfa523ab92e4c9f51962760a51d3,
-    type: 3}
-  castleFloorTile: {fileID: 21300000, guid: 49d664408a432bd40b58b746b0909816, type: 3}
-  castleMarbleFloorTile: {fileID: 21300000, guid: 214d873c9c83b0d4c8ea591600acf730,
-    type: 3}
-  caveFloorTile: {fileID: 21300000, guid: 7bf103c97c1f0a94fb9d42e22b1e011f, type: 3}
-  caveWallTile: {fileID: 21300000, guid: 492aad91f162ea44a8573d35d3b8cb0e, type: 3}
-  caveWallTileTentacle: {fileID: 21300000, guid: 183432fe6ba083a44bbcb46de4a5d795,
-    type: 3}
-  caveWallTileSpike: {fileID: 21300000, guid: f1e705cfff4294b4499511a3905ecac6, type: 3}
-  caveRiverHorizontal: {fileID: 21300000, guid: 3ba266b8456d2fc49b26e2c4e0699d72,
-    type: 3}
-  caveRiverVertical: {fileID: 21300000, guid: 6d45c4dd43fd0ed469fe7258f2e71b97, type: 3}
-  caveRiverJunction: {fileID: 21300000, guid: 916c854f24e2459488913fa1f25671ea, type: 3}
-  fieldTile3: {fileID: 21300000, guid: 9b6be3e1d57cee34295774dd32f8aff4, type: 3}
-  fieldTile1: {fileID: 21300000, guid: 6c40f42da612fc64585b5d9ce65cac64, type: 3}
-  fieldTile2: {fileID: 21300000, guid: aec9a3393d00c0c4a83199a430b4a85b, type: 3}
+  CastleList:
+  - {fileID: 1846103827680198604, guid: 03d8b4230c6c41a41a4a9fea9742140e, type: 3}
+  - {fileID: 5213842583512095398, guid: d6a89343e89a12f49a526561bb72adaf, type: 3}
+  - {fileID: 7806952180560513931, guid: fff36b848af669245bd2ff32e42995b3, type: 3}
+  - {fileID: 9149963913964870316, guid: c542aaaa089b8da4eaf62790eac45980, type: 3}
+  - {fileID: 6229327659834881001, guid: ed786f83a480e6e448f2f3c97b5e3fe9, type: 3}
+  - {fileID: 7147231999395874080, guid: a2fa77adb33af0d46b132209692c75f8, type: 3}
+  CaveList: []
+  FieldList:
+  - {fileID: 906727741484710418, guid: 66714019f9bc924408c9de4bf50a59ef, type: 3}
+  - {fileID: 4699771289376746031, guid: 3e6bf1fbec036c74681b2c317efa32f0, type: 3}
+  - {fileID: 1547908340167566565, guid: eb2df1d5584226e4384a07ecb50991eb, type: 3}
+  SwampList:
+  - {fileID: 2035132959886941096, guid: d636456c4b8bd1440892511c546df88a, type: 3}
+  - {fileID: 8544211864223976490, guid: f751225430b70f5468bc7ea3fab58854, type: 3}
+  - {fileID: 8648610103289624279, guid: 2f08b92485c54384582692ab7138fc3b, type: 3}
+  - {fileID: 258819712007718815, guid: 755aa984ad1bd8c4c9e8239f990f2271, type: 3}
+  - {fileID: 5412405096405003799, guid: 0a08b9f197bdaa9429145b315493c46e, type: 3}
 --- !u!4 &958855497
 Transform:
   m_ObjectHideFlags: 0
@@ -470,16 +466,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawning: 1
+  levelSelector: 2
   DeathParticles: {fileID: 453379015636368916, guid: 382ccfd7d2bcefa449a224c95427c681,
     type: 3}
-  Slime: {fileID: 3780288170307958729, guid: 6345b07ad2ad72d4db72ae62045140a5, type: 3}
-  MadSlime: {fileID: 0}
-  CyclopsSlime: {fileID: 0}
-  Skeleton: {fileID: 5666088566999026712, guid: f6362188dda67fc46989920272262ae5,
-    type: 3}
-  Golem: {fileID: 3306559639590848252, guid: 9cc3fcfcb240df94a84aca2792dcfdd2, type: 3}
-  Bat: {fileID: 4472043079577599864, guid: 4587da3d9fd322a40b7baf18f0e23c48, type: 3}
+  enemies1:
+  - {fileID: 4472043079577599864, guid: 4587da3d9fd322a40b7baf18f0e23c48, type: 3}
+  bosses1:
+  - {fileID: 2840755863856915142, guid: 726c1de109d45e842b299a106b1ef96c, type: 3}
+  enemies2:
+  - {fileID: 3780288170307958729, guid: 6345b07ad2ad72d4db72ae62045140a5, type: 3}
+  - {fileID: 1215451118367965405, guid: ac8a69209592bb940aebf93902989e42, type: 3}
+  bosses2:
+  - {fileID: 7147248284142521150, guid: 4caa58e0f784c1947b68a1861b1ee7fa, type: 3}
+  cEnemies: []
+  cBosses: []
   spawnDelay: 30
+  bossDelay: 60
 --- !u!4 &1048281319
 Transform:
   m_ObjectHideFlags: 0
@@ -781,7 +783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2132016984, guid: b3f4a6da298136847875de34f6ba6a3a, type: 3}
       propertyPath: m_MaskInteraction
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1316958410808808475, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}

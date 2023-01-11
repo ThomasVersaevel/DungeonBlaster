@@ -6,6 +6,7 @@ public class Slime : AbstractEnemy
 {
 
     public int stage = 1;
+    public int maxStage;
     public GameObject slime;
     private TrailRenderer SlimeTrail;
     public GameObject TrailObject;
@@ -38,10 +39,7 @@ public class Slime : AbstractEnemy
             hitpoints = 1;
             //SlimeTrail.startWidth = 0.6f;
             transform.localScale = new Vector3(size - 1f, size - 1f, size - 1f);
-        } else
-        {
-            base.Death();
-        }
+        } 
     }
 
     // Update is called once per frame
@@ -54,12 +52,22 @@ public class Slime : AbstractEnemy
     public override void Death() //activate particles, spawn two smaller slimes, destroy big slime
     {
         stage++;
-        GameObject childSlime = Instantiate(slime, transform.position-playerVector.normalized, Quaternion.identity);
-        GameObject childSlime2 = Instantiate(slime, transform.position-playerVector.normalized, Quaternion.identity);
-        childSlime.SendMessage("SetupSlimeStage", stage);
-        childSlime2.SendMessage("SetupSlimeStage", stage);
-        childSlime.SendMessage("ResetColor");
-        childSlime2.SendMessage("ResetColor"); //workaround for the red slime spawning every time
-        Destroy(gameObject);
+        if (stage > maxStage)
+        {
+            Destroy(TrailObject);
+            base.Death();
+        }
+        else
+        {
+            GameObject childSlime = Instantiate(slime, transform.position - playerVector.normalized, Quaternion.identity);
+            GameObject childSlime2 = Instantiate(slime, transform.position - playerVector.normalized, Quaternion.identity);
+            Slime slimeScript = childSlime.GetComponent<Slime>();
+            slimeScript.SetupSlimeStage(stage);
+            slimeScript.ResetColor();
+            Slime slimeScript2 = childSlime2.GetComponent<Slime>();
+            slimeScript2.SetupSlimeStage(stage);
+            slimeScript2.ResetColor(); //workaround for the red slime spawning every time
+            Destroy(gameObject);
+        }
     }
 }
