@@ -47,7 +47,7 @@ public class World : MonoBehaviour
         height = 75;
 
         //InitializeSetting();
-        generateLevel();
+        GenerateLevel();
     }
 
     // Update is called once per frame
@@ -84,7 +84,7 @@ public class World : MonoBehaviour
         return currentTile;
     }
 
-    void generateLevel()
+    void GenerateLevel()
     {
         // create open map
         for (int i = 0; i < width; i++)

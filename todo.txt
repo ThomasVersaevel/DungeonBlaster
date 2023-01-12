@@ -7,6 +7,12 @@ Weather effects like rain and lightning
 
 Paralax scrolling map
 Boss fights - IronRevenant
+Boss fight anouncer text
+
+better death
+
+Pause button
+
 loot tables
 weapons
 
