@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
 
             Invoke("ResetHitbox", 0.5f); //re enable hitbox to take damage again if you stay in a collider
 
-            auS.Play();
+            //auS.Play();
         }
         UpdateUI();
     }

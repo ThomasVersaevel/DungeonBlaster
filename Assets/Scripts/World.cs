@@ -22,7 +22,7 @@ public class World : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelSelector = GameObject.FindGameObjectWithTag("GameController").GetComponent<EventSystem>().getLevelSelector();
+        levelSelector = GameObject.FindGameObjectWithTag("GameController").GetComponent<EventSystem>().GetLevelSelector();
         Random.InitState(12345); // seed the random number generator
                                  // Lists to keep tilesets, 0, 1 are floor - 2 is regular wall - 3, 4 are corrupted, rest is arbitrary
                                  // CastleList = new GameObject[9]  {castleFloorTile,   castleMarbleFloorTile,  castleWallTile, castleWallTileCorrupted,    castleWallTileEye,  castleWallTileCurve,    null,                  null,            null};

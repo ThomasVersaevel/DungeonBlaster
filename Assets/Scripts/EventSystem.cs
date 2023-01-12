@@ -10,7 +10,10 @@ public class EventSystem : MonoBehaviour
     private GameObject[] portals;
     private List<GameObject> activeUnits;
     public GameObject DeathParticles;
+    public GameObject PauseOverlay;
+    private bool paused = false;
 
+    // Enemy prefabs per level
     public GameObject[] enemies1;
     public GameObject[] bosses1;
     public GameObject[] enemies2;
@@ -50,13 +53,18 @@ public class EventSystem : MonoBehaviour
     {
         timer += Time.deltaTime; // keep the time in ?seconds?
 
-        //foreach (GameObject obj in activeUnits)
-        //{
-        //    if (obj == null)
-        //    {
-        //        activeUnits.Remove(obj);
-        //    }
-        //}
+        // key handler for pausing using keyboard
+        if (Input.GetKeyDown("escape"))
+        {
+            if (paused)
+            {
+                ResumeGame();
+            } else
+            {
+                PauseGame();
+            }
+        }
+
         if (bossCountdown < 0 )
         {
             SpawnBoss();
@@ -76,9 +84,23 @@ public class EventSystem : MonoBehaviour
         }
     }
 
-    public int getLevelSelector()
+    public int GetLevelSelector()
     {
         return levelSelector;
+    }
+
+    // Pause game by setting time to 0, also open pause overlay and allow resume game from click
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        paused = true;
+        // Activate pause overlay
+
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        paused = false;
     }
 
     // Spawn enemy units around the players view (>8 units distance)

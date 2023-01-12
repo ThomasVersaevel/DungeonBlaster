@@ -72,7 +72,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     void FlashRed()
     {
  
-        sr.color = new Vector4(200, 0, 0, 1);
+        sr.color = new Vector4(150, 0, 0, 1);
         Invoke("ResetColor", 0.3f);
     }
     public void ResetColor()
