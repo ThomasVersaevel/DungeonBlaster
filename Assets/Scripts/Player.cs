@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -133,29 +134,13 @@ public class Player : MonoBehaviour
     public void GainXP(int xp)
     {
         curXP += xp;
-        //print(defaultXpBarPos * ((float)curXP / (float)reqXP));
-        // bar has to move in positive y direction from -5.81 to 0. 
-
-        //XpBar.transform.position = new Vector3(0, defaultXpBarPos * ((float)curXP / (float)reqXP), 0);
-        Vector3 canvasSpacePos;// = XpBar.transform.position;
-
-        //RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, 
-        //    Vector3.MoveTowards(XpBar.transform.position, new Vector3(0, defaultXpBarPos * ((float)curXP / (float)reqXP), 0), speed), camera, 
-        //    out canvasSpacePos);
-
-        RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect,
-            new Vector3(0, ((float)curXP / (float)reqXP), 0), camera,
-            out canvasSpacePos);
-
-        //XpBar.anchorPosition
-
-        XpBar.transform.position += canvasSpacePos;
-        if (curXP > reqXP)
+        
+        if (curXP >= reqXP)
         {
             curXP -= reqXP; // carry over xp
-            XpBar.transform.position = new Vector3(0, defaultXpBarPos, 0) + transform.position;
             LevelUp();
         }
+        XpBar.GetComponent<Slider>().value = (float)curXP / (float)reqXP;
     }
     private void LevelUp() // vampsurvivors uses 10, 13, 16 reqXP increments
     {
