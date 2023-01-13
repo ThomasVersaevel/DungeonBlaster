@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class EventSystem : MonoBehaviour
 {
     public bool spawning; // debug
     public int levelSelector;
+
 
     private GameObject[] portals;
     private List<GameObject> activeUnits;
@@ -68,6 +70,10 @@ public class EventSystem : MonoBehaviour
         if (bossCountdown < 0 )
         {
             SpawnBoss();
+            Invoke("LightningStrike", 0f);
+            Invoke("ResetLight", 0.1f);
+            Invoke("LightningStrike", 0.15f);
+            Invoke("ResetLight", 0.35f);
             bossCountdown = bossDelay;
         }
         else
@@ -89,18 +95,34 @@ public class EventSystem : MonoBehaviour
         return levelSelector;
     }
 
+    private Vector3 CirclePoint(float radius)
+    {
+        return Random.insideUnitCircle.normalized * radius;
+    }
+
+    private void LightningStrike()
+    {
+        gameObject.GetComponent<Light2D>().intensity = 1;
+    }
+    private void ResetLight()
+    {
+        gameObject.GetComponent<Light2D>().intensity = 0.6f;
+    }
+
     // Pause game by setting time to 0, also open pause overlay and allow resume game from click
     public void PauseGame()
     {
         Time.timeScale = 0;
         paused = true;
         // Activate pause overlay
+        PauseOverlay.SetActive(true);
 
     }
     public void ResumeGame()
     {
         Time.timeScale = 1;
         paused = false;
+        PauseOverlay.SetActive(false);
     }
 
     // Spawn enemy units around the players view (>8 units distance)
@@ -108,7 +130,7 @@ public class EventSystem : MonoBehaviour
     {
         playerPos = GameObject.Find("Player").transform.position;
         int spawnDist = 12; // distance based on view
-
+        Vector3 spawnPoint = CirclePoint(spawnDist);
         // TODO make the spawning circular around player
         Vector3 xDir = new Vector3(spawnDist, 0, 0);
         Vector3 yDir = new Vector3(0, spawnDist, 0);
@@ -117,18 +139,18 @@ public class EventSystem : MonoBehaviour
         {
             int unitCount = 4 + Mathf.FloorToInt(timer / 14.0f); // deviding by 60 gives minute (smaller number more unitCount)
                                                                  // Spawn units increasing nr by time, check out of bounds and move the units to other spawn direction
-            SpawnUnits(unitCount, playerPos + xDir);
-            SpawnUnits(unitCount, playerPos - xDir);
-            SpawnUnits(unitCount, playerPos + yDir);
-            SpawnUnits(unitCount, playerPos - yDir);
+            SpawnUnits(unitCount, playerPos + CirclePoint(spawnDist));
+            SpawnUnits(unitCount, playerPos - CirclePoint(spawnDist));
+            SpawnUnits(unitCount, playerPos + CirclePoint(spawnDist));
+            SpawnUnits(unitCount, playerPos - CirclePoint(spawnDist));
         } else if (levelSelector == 2)
         {
             int unitCount = 2 + Mathf.FloorToInt(timer / 20.0f); // deviding by 60 gives minute (smaller number more unitCount)
                                                                  // Spawn units increasing nr by time, check out of bounds and move the units to other spawn direction
-            SpawnUnits(unitCount, playerPos + xDir);
-            SpawnUnits(unitCount, playerPos - xDir);
-            SpawnUnits(unitCount, playerPos + yDir);
-            SpawnUnits(unitCount, playerPos - yDir);
+            SpawnUnits(unitCount, playerPos + CirclePoint(spawnDist));
+            SpawnUnits(unitCount, playerPos + CirclePoint(spawnDist));
+            SpawnUnits(unitCount, playerPos + CirclePoint(spawnDist));
+            SpawnUnits(unitCount, playerPos + CirclePoint(spawnDist));
         }
     }
 

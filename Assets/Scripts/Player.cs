@@ -19,8 +19,7 @@ public class Player : MonoBehaviour
     private AudioSource auS;
     private BoxCollider2D box;
 
-    public GameObject XpBar; // starts at y: -5.81 and goes up to 0
-    private float defaultXpBarPos = -5.81f;
+    public GameObject XpBar; // slider
     private float speed = 5.81f; // xp bar move speed
     public TMP_Text levelText;
     private int level = 1;
@@ -158,8 +157,8 @@ public class Player : MonoBehaviour
         }
         level++;
         // UI changes:
-        levelText.text = level.ToString();
 
+        levelText.text = level.ToString();
     }
 
     private void Movement()
