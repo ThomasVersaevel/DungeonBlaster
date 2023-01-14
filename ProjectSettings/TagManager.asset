@@ -52,6 +52,9 @@ TagManager:
   - name: Enemies
     uniqueID: 1378589561
     locked: 0
+  - name: New Layer
+    uniqueID: 1909270211
+    locked: 0
   - name: Particles
     uniqueID: 2267878607
     locked: 0
