@@ -69,8 +69,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1378589561
+  m_SortingLayer: 2
   m_SortingOrder: 8
   m_Time: 2.5
   m_Parameters:
@@ -94,7 +94,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0, g: 0.9607844, b: 0.44705886, a: 1}
-      key1: {r: 0.2784314, g: 1, b: 0.6156863, a: 1}
+      key1: {r: 0.2784314, g: 1, b: 0.6156863, a: 0.61960787}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -110,7 +110,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
+      atime1: 42983
       atime2: 0
       atime3: 0
       atime4: 0
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_SortingOrder: 9
   m_Sprite: {fileID: -7416158527286791517, guid: c014811ac24e687419b96fb22117d903,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8039216}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -260,7 +260,6 @@ MonoBehaviour:
   stage: 1
   maxStage: 4
   slime: {fileID: 7147248284142521150}
-  TrailObject: {fileID: 1842426074814800790}
   size: 2
 --- !u!61 &6270318941609673613
 BoxCollider2D:

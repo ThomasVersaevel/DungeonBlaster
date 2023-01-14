@@ -69,9 +69,8 @@ public abstract class AbstractEnemy : MonoBehaviour
         // direction = playerVector; //this is for sprite rotation
     }
 
-    void FlashRed()
+    protected virtual void FlashRed()
     {
- 
         sr.color = new Vector4(150, 0, 0, 1);
         Invoke("ResetColor", 0.3f);
     }

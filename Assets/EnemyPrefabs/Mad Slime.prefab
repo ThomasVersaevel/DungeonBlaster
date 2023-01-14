@@ -69,8 +69,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1378589561
+  m_SortingLayer: 2
   m_SortingOrder: 8
   m_Time: 2.5
   m_Parameters:
@@ -80,21 +80,30 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.006210327
-        value: 0.6216179
+        time: 0
+        value: 0.51292527
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.1956555
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.64705884, g: 0.48235297, b: 0.8000001, a: 0.98039216}
-      key1: {r: 0.64705884, g: 0.48235297, b: 0.8000001, a: 0.78431374}
+      key1: {r: 0.64705884, g: 0.48235297, b: 0.8000001, a: 0.5411765}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -110,7 +119,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 55319
+      atime1: 47224
       atime2: 0
       atime3: 0
       atime4: 0
@@ -240,7 +249,6 @@ MonoBehaviour:
   stage: 1
   maxStage: 3
   slime: {fileID: 1215451118367965405}
-  TrailObject: {fileID: 1274485280}
   size: 1.5
 --- !u!50 &1215451118367965394
 Rigidbody2D:
