@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class RainbowGradient : MonoBehaviour
 {
     // The sprite renderer for the sprite that will display the rainbow gradient
     public SpriteRenderer spriteRenderer;
-
+    private Light2D light;
     // The speed at which the rainbow gradient will move
-    public float gradientMoveSpeed = 0.3f;
+    private float gradientMoveSpeed = 0.1f;
 
     // The offset for the rainbow gradient
     private float gradientOffset = 0.0f;
@@ -16,9 +17,10 @@ public class RainbowGradient : MonoBehaviour
     private void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        light = transform.GetChild(0).GetComponent<Light2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Update the gradient offset based on the movement speed
         gradientOffset += Time.deltaTime * gradientMoveSpeed;
@@ -30,6 +32,7 @@ public class RainbowGradient : MonoBehaviour
         }
 
         // Create a new color using the gradient offset and set it as the color of the sprite renderer
-        spriteRenderer.color = Color.HSVToRGB(gradientOffset, 1.0f, 1.0f);
+        spriteRenderer.color = Color.HSVToRGB(gradientOffset, 0.6f, 1.0f);
+        light.color = Color.HSVToRGB(gradientOffset, 0.9f, 1);
     }
 }

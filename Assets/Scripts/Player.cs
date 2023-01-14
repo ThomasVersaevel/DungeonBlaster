@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private int level = 1;
     private int curXP;
     private int reqXP;
+    private float curVelocity = 0;
 
     private int health;
     private int maxHealth;
@@ -56,7 +57,9 @@ public class Player : MonoBehaviour
         anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("moveY", Input.GetAxisRaw("Vertical"));
 
-       
+        // smooth xp bar
+        float curSliderValue = Mathf.SmoothDamp(XpBar.GetComponent<Slider>().value, (float)curXP / (float)reqXP, ref curVelocity, 100 * Time.deltaTime);
+        XpBar.GetComponent<Slider>().value = curSliderValue;
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
@@ -139,7 +142,7 @@ public class Player : MonoBehaviour
             curXP -= reqXP; // carry over xp
             LevelUp();
         }
-        XpBar.GetComponent<Slider>().value = (float)curXP / (float)reqXP;
+        //XpBar.GetComponent<Slider>().value = (float)curXP / (float)reqXP;
     }
     private void LevelUp() // vampsurvivors uses 10, 13, 16 reqXP increments
     {

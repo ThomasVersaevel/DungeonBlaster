@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class XpParticle : MonoBehaviour
 {
@@ -12,13 +13,15 @@ public class XpParticle : MonoBehaviour
     public float speed;
     private float colorSpeed;
     public float radius = 1f;
+    private Light2D light;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         hue = 0;
         speed = 7;
-        colorSpeed = 0.5f;
+        colorSpeed = 0.1f;
+        light = GetComponent<Light2D>();
     }
 
     void Update()
@@ -51,10 +54,11 @@ public class XpParticle : MonoBehaviour
 
         if (hue > 1)
         {
-            hue = 0;
+            hue = 0.0f;
         }
         // Convert the hue value to RGB and set it as the color of the sprite renderer
-        sr.color = Color.HSVToRGB(hue, 1, 1);
+        sr.color = Color.HSVToRGB(hue, 0.7f, 1);
+        light.color = Color.HSVToRGB(hue, 0.9f, 1);
     }
     private void OnTriggerEnter2D(Collider2D coll)
     {
