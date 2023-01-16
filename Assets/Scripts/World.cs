@@ -91,7 +91,7 @@ public class World : MonoBehaviour
         {
             for (int j = 0; j < height; j++) // collumn wise map gen
             {
-                if (i == 0 || j == 0 || i == width - 2 || j == height - 2) //create walls around map
+                if (i == 0 || j == 0 || i == width - 1 || j == height - 1) //create walls around map
                 {
                     if (Random.Range(0, 10) <= 1)
                     { //10% chance for corupt

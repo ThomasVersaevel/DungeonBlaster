@@ -14,4 +14,6 @@ public class Lightning : MonoBehaviour
     {
         // todo have lightning strike
     }
+
+
 }

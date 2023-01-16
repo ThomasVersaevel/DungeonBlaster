@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AWeapon : MonoBehaviour
 {
-    public SpriteRenderer sr;
+    protected SpriteRenderer sr;
     private float angle;
     public GameObject projectile;
     public float attackSpeed;
@@ -18,10 +18,11 @@ public abstract class AWeapon : MonoBehaviour
     void Start()
     {
         attackTimer = 0;
+        sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    public void UpdateRotation()
+    protected virtual void UpdateRotation()
     {
         Vector3 mousePos = Input.mousePosition;
 

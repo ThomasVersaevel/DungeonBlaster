@@ -57,7 +57,7 @@ public class XpParticle : MonoBehaviour
             hue = 0.0f;
         }
         // Convert the hue value to RGB and set it as the color of the sprite renderer
-        sr.color = Color.HSVToRGB(hue, 0.7f, 1);
+        sr.color = Color.HSVToRGB(hue, 0.8f, 1);
         light.color = Color.HSVToRGB(hue, 0.9f, 1);
     }
     private void OnTriggerEnter2D(Collider2D coll)

@@ -1295,7 +1295,7 @@ MonoBehaviour:
   - {fileID: 7147248284142521150, guid: 4caa58e0f784c1947b68a1861b1ee7fa, type: 3}
   cEnemies: []
   cBosses: []
-  spawnDelay: 5
+  spawnDelay: 30
   bossDelay: 60
 --- !u!4 &1048281319
 Transform:
@@ -1518,6 +1518,29 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1278902104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5223734912932055999, guid: b3f4a6da298136847875de34f6ba6a3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5223734913756694407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1278902105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278902104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b71f7ac5ac9ae4192629f29c188d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  attackSpeed: 0
+  projectileSpeed: 0
+  attackTimer: 0
+  damage: 0
 --- !u!1 &1350412466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,12 +1863,12 @@ PrefabInstance:
     - target: {fileID: 5223734912851416594, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.73
+      value: 19.5
       objectReference: {fileID: 0}
     - target: {fileID: 5223734912851416594, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.27
+      value: 12.6
       objectReference: {fileID: 0}
     - target: {fileID: 5223734912851416594, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}
@@ -1891,6 +1914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223734912932055999, guid: b3f4a6da298136847875de34f6ba6a3a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5223734912943423113, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}
@@ -1967,6 +1995,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5223734914185274874, guid: b3f4a6da298136847875de34f6ba6a3a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5223734914585031883, guid: b3f4a6da298136847875de34f6ba6a3a,
         type: 3}
       propertyPath: m_Mesh
@@ -1997,5 +2030,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5223734912932055997, guid: b3f4a6da298136847875de34f6ba6a3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b3f4a6da298136847875de34f6ba6a3a, type: 3}
