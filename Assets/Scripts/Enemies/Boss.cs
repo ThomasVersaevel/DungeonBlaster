@@ -36,7 +36,7 @@ public class Boss : MonoBehaviour
     void Update()
     {
         float curSliderValue = Mathf.SmoothDamp(BossHPBar.value,
-            enemyScript.GetHitPoints() / enemyScript.GetMaxHitPoints(), ref curVelocity, 100 * Time.deltaTime);
+            enemyScript.GetHitPoints() / enemyScript.GetMaxHitPoints(), ref curVelocity, 300 * Time.deltaTime);
         BossHPBar.value = curSliderValue;
     }
     private void DeactivateBossText()
