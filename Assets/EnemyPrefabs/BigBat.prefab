@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2840755863856915136}
   - component: {fileID: 2840755863856915139}
   - component: {fileID: 5422293305008795702}
+  - component: {fileID: 2049126431}
   m_Layer: 10
   m_Name: BigBat
   m_TagString: Enemy
@@ -168,6 +169,22 @@ MonoBehaviour:
   sr: {fileID: 2840755863856915140}
   xpDrop: {fileID: 2398759924850089809, guid: 87c95e7020e11b047a964bbd45de41d9, type: 3}
   ms: 0
-  hitpoints: 0
+  maxHP: 50
+  hitpoints: 50
   attackRange: 0
   attackSpeed: 0
+--- !u!114 &2049126431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840755863856915142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35578d1d84370d42bcb8c56ef510c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossUI: {fileID: 1087359686016822830, guid: de5d98c7b5c39b742b268df3a28eaa31, type: 3}
+  BossHPSprite: {fileID: 21300000, guid: f9cc88b4eb254614d950b9c128ed9083, type: 3}
+  BossName: The Big Bat

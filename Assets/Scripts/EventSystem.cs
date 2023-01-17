@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.UI;
 
 public class EventSystem : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class EventSystem : MonoBehaviour
     public GameObject DeathParticles;
     public GameObject PauseOverlay;
     private bool paused = false;
+
 
     // Enemy prefabs per level
     public GameObject[] enemies1;
@@ -54,6 +57,7 @@ public class EventSystem : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime; // keep the time in ?seconds?
+        playerPos = GameObject.Find("Player").transform.position;
 
         // key handler for pausing using keyboard
         if (Input.GetKeyDown("escape"))
@@ -128,7 +132,6 @@ public class EventSystem : MonoBehaviour
     // Spawn enemy units around the players view (>8 units distance)
     private void SendWave()
     {
-        playerPos = GameObject.Find("Player").transform.position;
         int spawnDist = 12; // distance based on view
         Vector3 spawnPoint = CirclePoint(spawnDist);
         // TODO make the spawning circular around player
@@ -172,9 +175,10 @@ public class EventSystem : MonoBehaviour
     private void SpawnBoss()
     {
         //Vector3 addedRandom = new Vector3(Random.Range(-0.6f, 0.6f), Random.Range(-0.6f, 0.6f), 0);
-        GameObject unit = Instantiate(cBosses[0], Vector3.up*3, transform.rotation);
+        GameObject unit = Instantiate(cBosses[0], playerPos + Vector3.up*6, transform.rotation);
         activeUnits.Add(unit);
     }
+
 
     public void MakeDeathParticles(Vector3 pos)
     {

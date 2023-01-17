@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -9,6 +10,8 @@ public class Player : MonoBehaviour
 
     public Camera camera;
     public RectTransform canvasRect;
+    public GameObject SpotlightObj;
+    private Light2D Spotlight;
 
     private GameObject healthContainer;
     private float ms;
@@ -17,7 +20,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr;
     private bool invincible;
     private AudioSource auS;
-    private BoxCollider2D box;
+    private BoxCollider2D boxColl;
 
     public GameObject XpBar; // slider
     private float speed = 5.81f; // xp bar move speed
@@ -40,10 +43,11 @@ public class Player : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
-        box = gameObject.GetComponent<BoxCollider2D>();
+        boxColl = gameObject.GetComponent<BoxCollider2D>();
         UpdateUI();
         healthContainer = GameObject.Find("HealthContainer");
         auS = gameObject.GetComponent<AudioSource>();
+        Spotlight = SpotlightObj.GetComponent<Light2D>();
     }
 
     // Update is called once per frame
@@ -56,6 +60,9 @@ public class Player : MonoBehaviour
 
         anim.SetFloat("moveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("moveY", Input.GetAxisRaw("Vertical"));
+
+        // this just reducing it to 10.5 aprox
+        //Spotlight.pointLightOuterRadius = Mathf.SmoothDamp(Spotlight.pointLightOuterRadius, Random.Range(10f, 11), ref curVelocity, 100 * Time.deltaTime);
 
         // smooth xp bar
         float curSliderValue = Mathf.SmoothDamp(XpBar.GetComponent<Slider>().value, (float)curXP / (float)reqXP, ref curVelocity, 100 * Time.deltaTime);
@@ -99,8 +106,8 @@ public class Player : MonoBehaviour
 
     void ResetHitbox()
     {
-        box.enabled = false;
-        box.enabled = true;
+        boxColl.enabled = false;
+        boxColl.enabled = true;
     }
 
     void FlashColor()

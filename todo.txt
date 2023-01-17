@@ -39,3 +39,9 @@ When level up you can choose
 - items
 	- Weapons to upgrade
 - Combinations?
+
+stat upgrades in the form of non-weapons like hats backpack boots etc.
+
+Idea: Start with knife and upgrade with each pickup (per elements maybe?)
+
+Zoom out over time to allow easier exploring and more play area.

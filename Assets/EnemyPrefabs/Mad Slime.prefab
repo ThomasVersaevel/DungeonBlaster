@@ -243,7 +243,8 @@ MonoBehaviour:
   sr: {fileID: 1215451118367965393}
   xpDrop: {fileID: 7023562538065777208, guid: 24c600bf6d01991469599306e6161824, type: 3}
   ms: 2.5
-  hitpoints: 3
+  maxHP: 0
+  hitpoints: 10
   attackRange: 0
   attackSpeed: 0
   stage: 1

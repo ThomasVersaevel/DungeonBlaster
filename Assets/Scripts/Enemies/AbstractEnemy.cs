@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AbstractEnemy : MonoBehaviour
 {
-    private Color ogColor;
+    //public Color orgColor;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     private bool isMoving;
@@ -17,6 +17,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     //AIPathing aiPath;
 
     public float ms;
+    public float maxHP;
     public float hitpoints;
     public float attackRange;
     public float attackSpeed;
@@ -29,10 +30,13 @@ public abstract class AbstractEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        maxHP = hitpoints;
         delayCountdown = delay;
         movementTimer = moveTime;
         ResetColor();
         //aiPath = gameObject.GetComponent<AIPathing>();
+        //orgColor = sr.color;
     }
     public void UpdateAbstract()
     {
@@ -49,6 +53,14 @@ public abstract class AbstractEnemy : MonoBehaviour
     {
         playerDistance = Mathf.Sqrt(Mathf.Pow(playerVector.x, 2) + Mathf.Pow(playerVector.y, 2));
         return playerDistance;
+    }
+    public float GetHitPoints()
+    {
+        return hitpoints;
+    }
+    public float GetMaxHitPoints()
+    {
+        return maxHP;
     }
 
     public virtual void MoveToTarget()
@@ -76,6 +88,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     }
     public void ResetColor()
     {
+        // sr.color = orgColor;
         sr.color = Color.white;
     }
 

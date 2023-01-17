@@ -9,6 +9,8 @@ TagManager:
   - Projectile
   - SpawnPortal
   - Pickup
+  - GameControllerCanvas
+  - BossNameText
   layers:
   - Default
   - TransparentFX

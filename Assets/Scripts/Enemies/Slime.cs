@@ -26,17 +26,17 @@ public class Slime : AbstractEnemy
         SlimeTrail = transform.GetChild(0).GetComponent<TrailRenderer>();
         if (stage == 1)
         {
-            hitpoints = 5;
+            //hitpoints = maxHP;
             SlimeTrail.startWidth = .5f;
             transform.localScale = new Vector3(size, size, size);
         } else if (stage == 2)
         {
-            hitpoints = 3;
+            hitpoints = Mathf.Ceil( maxHP/2 );
             SlimeTrail.startWidth = 0.3f;
             transform.localScale = new Vector3(size-0.5f, size - 0.5f, size - 0.5f);
         } else if (stage == 3)
         {
-            hitpoints = 1;
+            hitpoints = hitpoints = Mathf.Ceil(maxHP / 5); ;
             SlimeTrail.startWidth = 0.2f;
             transform.localScale = new Vector3(size - 1f, size - 1f, size - 1f);
         } 

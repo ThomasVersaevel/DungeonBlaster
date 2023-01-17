@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1259411359039991092}
   - component: {fileID: 1410455745}
   - component: {fileID: 1410455746}
+  - component: {fileID: 499176070}
   m_Layer: 10
   m_Name: CyclopsSlime
   m_TagString: Enemy
@@ -254,6 +255,7 @@ MonoBehaviour:
   sr: {fileID: 7147248284142521148}
   xpDrop: {fileID: 7023562538065777208, guid: 24c600bf6d01991469599306e6161824, type: 3}
   ms: 2.5
+  maxHP: 20
   hitpoints: 20
   attackRange: 0
   attackSpeed: 0
@@ -5092,3 +5094,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &499176070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147248284142521150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35578d1d84370d42bcb8c56ef510c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossUI: {fileID: 1087359686016822830, guid: de5d98c7b5c39b742b268df3a28eaa31, type: 3}
+  BossHPSprite: {fileID: 21300000, guid: 7361733437e442b459b5d0154cf06151, type: 3}
+  BossName: Slimeclops
