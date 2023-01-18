@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
             //auS.Play();
 
         }
-        if (health > 0)
+        if (health >= 0)
         {
             UpdateUI();
         }
@@ -132,7 +132,8 @@ public class Player : MonoBehaviour
 
     public void UpdateUI() //call this when taking damage or healing
     {
-        for (int i = 0; maxHealth - health > i; i++)
+        int lostHealth = maxHealth - health;
+        for (int i = 0; lostHealth > i; i++)
         {
             healthContainer.transform.GetChild(i).gameObject.SetActive(false);
         }
