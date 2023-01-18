@@ -100,8 +100,12 @@ public class Player : MonoBehaviour
             Invoke("ResetHitbox", 0.5f); //re enable hitbox to take damage again if you stay in a collider
 
             //auS.Play();
+
         }
-        UpdateUI();
+        if (health > 0)
+        {
+            UpdateUI();
+        }
     }
 
     void ResetHitbox()
@@ -128,7 +132,6 @@ public class Player : MonoBehaviour
 
     public void UpdateUI() //call this when taking damage or healing
     {
-        //print("hello");
         for (int i = 0; maxHealth - health > i; i++)
         {
             healthContainer.transform.GetChild(i).gameObject.SetActive(false);
