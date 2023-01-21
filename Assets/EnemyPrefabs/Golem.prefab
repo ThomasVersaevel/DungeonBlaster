@@ -118,10 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0252752ea11537c41990efa460a49680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currColor: {r: 0, g: 0, b: 0, a: 0}
   rb: {fileID: 3306559639590848249}
   sr: {fileID: 3306559639590848251}
   xpDrop: {fileID: 2398759924850089809, guid: 87c95e7020e11b047a964bbd45de41d9, type: 3}
+  DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
+    type: 3}
   ms: 0.5
+  maxHP: 0
   hitpoints: 3
   attackRange: 0
   attackSpeed: 0

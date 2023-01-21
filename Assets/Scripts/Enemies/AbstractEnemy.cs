@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AbstractEnemy : MonoBehaviour
 {
-    //public Color orgColor;
+    public Color currColor;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     private bool isMoving;
@@ -14,6 +14,8 @@ public abstract class AbstractEnemy : MonoBehaviour
     private float movementTimer;
     protected Vector3 direction;
     public GameObject xpDrop;
+    public GameObject DeathParticles;
+    public Color spriteColor;
     //AIPathing aiPath;
 
     public float ms;
@@ -35,6 +37,7 @@ public abstract class AbstractEnemy : MonoBehaviour
         delayCountdown = delay;
         movementTimer = moveTime;
         ResetColor();
+        //spriteColor = sr.sprite.texture.GetPixel(12, 12);
         //aiPath = gameObject.GetComponent<AIPathing>();
         //orgColor = sr.color;
     }
@@ -83,13 +86,14 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     protected virtual void FlashRed()
     {
+        currColor = sr.color;
         sr.color = new Vector4(150, 0, 0, 1);
         Invoke("ResetColor", 0.3f);
     }
     public void ResetColor()
     {
         // sr.color = orgColor;
-        sr.color = Color.white;
+        sr.color = currColor;
     }
 
     public void TakeDamage(float damage)
@@ -100,8 +104,10 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     public virtual void Death()
     {
+        // add drop chance
         Instantiate(xpDrop, transform.position, transform.rotation);
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<EventSystem>().MakeDeathParticles(transform.position);
+        GameObject dp = Instantiate(DeathParticles, transform.position, transform.rotation);
+        //dp.GetComponent<ParticleSystem>().startColor = spriteColor;
         Destroy(gameObject);
     }
 

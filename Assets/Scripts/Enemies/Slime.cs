@@ -63,10 +63,10 @@ public class Slime : AbstractEnemy
             GameObject childSlime2 = Instantiate(slime, transform.position - playerVector.normalized, Quaternion.identity);
             Slime slimeScript = childSlime.GetComponent<Slime>();
             slimeScript.SetupSlimeStage(stage);
-            slimeScript.ResetColor();
+            //slimeScript.ResetColor();
             Slime slimeScript2 = childSlime2.GetComponent<Slime>();
             slimeScript2.SetupSlimeStage(stage);
-            slimeScript2.ResetColor(); //workaround for the red slime spawning every time
+            //slimeScript2.ResetColor(); //workaround for the red slime spawning every time
             Destroy(gameObject);
         }
     }

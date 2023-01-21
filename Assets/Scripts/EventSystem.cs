@@ -179,7 +179,7 @@ public class EventSystem : MonoBehaviour
         activeUnits.Add(unit);
     }
 
-
+    // deprecated
     public void MakeDeathParticles(Vector3 pos)
     {
         Instantiate(DeathParticles, pos, new Quaternion(0, 0 ,0, 0));
