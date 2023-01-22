@@ -1687,6 +1687,27 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1596047304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5223734912818528367, guid: b3f4a6da298136847875de34f6ba6a3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5223734913756694407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1596047306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596047304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c35a258ae56b946b9165291f61c675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 5
+  inventorySystem:
+    inventorySlots: []
 --- !u!850595691 &1693880875
 LightingSettings:
   m_ObjectHideFlags: 0

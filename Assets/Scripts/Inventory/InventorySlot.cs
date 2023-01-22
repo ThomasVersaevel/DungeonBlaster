@@ -9,7 +9,6 @@ public class InventorySlot
     [SerializeField] private int stackSize;
 
     public InventoryItemData ItemData => itemData;
-
     public int StackSize => stackSize;
 
     // Start is called before the first frame update
@@ -19,10 +18,8 @@ public class InventorySlot
         stackSize = amount;
     }
 
-    public InventorySlot()
-    {
-        itemData = null;
-        stackSize = amount;
+    public InventorySlot() {
+        ClearSlot();
     }
         
     public void ClearSlot()
@@ -34,7 +31,8 @@ public class InventorySlot
 
     public bool RoomLeftInStack(int amountToAdd, out int amountRemaining)
     {
-
+        amountRemaining = ItemData.MaxStackSize - stackSize;
+        return RoomLeftInStack(amountToAdd);
     }
     public bool RoomLeftInStack(int amountToAdd)
     {
