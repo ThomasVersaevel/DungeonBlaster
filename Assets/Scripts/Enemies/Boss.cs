@@ -26,6 +26,7 @@ public class Boss : MonoBehaviour
         enemyScript = gameObject.GetComponent<AbstractEnemy>();
         BossText = UI.GetComponentInChildren<TMP_Text>();
         BossHPBar = UI.GetComponentInChildren<Slider>();
+        BossHPBar.value = 0;
         UI.GetComponentInChildren<SpriteRenderer>().sprite = BossHPSprite;
         GameObject.FindGameObjectWithTag("BossNameText").GetComponent<TMP_Text>().text = BossName;
         BossText.text = "Boss Appears";

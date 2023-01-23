@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5372105357521732895}
   - component: {fileID: 5372105357521732882}
   m_Layer: 13
-  m_Name: IceSwordtemPickup
+  m_Name: IceSwordPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5372105357521732894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 23.19, y: 13.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!58 &5372105357521732892
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PickupRadius: 1
-  ItemData: {fileID: 11400000, guid: 32f82b14cd01e8d43a1dd3a8ea59ec83, type: 2}
+  ItemData: {fileID: 11400000, guid: 10e71c557aeea9a498eed5d1288a3acb, type: 2}
 --- !u!212 &5372105357521732882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 1cccb1bf7adf2a145aea7b3fbe32061b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
