@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9489fee9fed0ad4cb7c8c11de3a85bd, type: 3}
+  m_Name: IceSwordItem
+  m_EditorClassIdentifier: 
+  ID: 1
+  DisplayName: Ice Sword
+  Description: A magical sword imbued with the power of eternal frost
+  Icon: {fileID: 21300000, guid: 6e8c71a0f9db5db4baf41145257d28fc, type: 3}
+  MaxStackSize: 1

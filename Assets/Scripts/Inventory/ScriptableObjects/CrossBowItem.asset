@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9489fee9fed0ad4cb7c8c11de3a85bd, type: 3}
+  m_Name: CrossBowItem
+  m_EditorClassIdentifier: 
+  ID: 10
+  DisplayName: Cross Bow
+  Description: A bow that takes longer to reload but fires at much greater strength
+  Icon: {fileID: 21300000, guid: 04caa782b648c444088d2b4d8da76e3a, type: 3}
+  MaxStackSize: 1
