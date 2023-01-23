@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 7
   DisplayName: Broad Sword
   Description: A steel sword with a wide edge
-  Icon: {fileID: 21300000, guid: 186c2f8bfd44efd4dad62772de595650, type: 3}
+  Icon: {fileID: 21300000, guid: 42ef2b415779d0a4788722392415b8bf, type: 3}
   MaxStackSize: 1

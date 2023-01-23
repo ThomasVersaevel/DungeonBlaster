@@ -13,7 +13,7 @@ public class ItemPickup : MonoBehaviour
 
     private void Awake()
     {
-        coll = GetComponent<CircleCollider2D>();
+        coll = gameObject.GetComponent<CircleCollider2D>();
         coll.isTrigger = true;
         coll.radius = PickupRadius;
     }
