@@ -4,7 +4,9 @@ using UnityEngine;
 
 public abstract class AbstractEnemy : MonoBehaviour
 {
-    public Color currColor;
+    private Color currColor;
+    [SerializeField] private Material flashMaterial;
+    [SerializeField] private Material defaultMaterial;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     private bool isMoving;
@@ -16,6 +18,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     public GameObject xpDrop;
     public GameObject DeathParticles;
     public Color spriteColor;
+    private Coroutine flashRoutine;
     //AIPathing aiPath;
 
     public float ms;
@@ -39,6 +42,8 @@ public abstract class AbstractEnemy : MonoBehaviour
         ResetColor();
         //spriteColor = sr.sprite.texture.GetPixel(12, 12);
         //aiPath = gameObject.GetComponent<AIPathing>();
+        currColor = sr.color;
+        defaultMaterial = sr.material;
         //orgColor = sr.color;
     }
     public void UpdateAbstract()
@@ -84,22 +89,30 @@ public abstract class AbstractEnemy : MonoBehaviour
         // direction = playerVector; //this is for sprite rotation
     }
 
-    protected virtual void FlashRed()
+    protected virtual IEnumerator FlashRed()
     {
-        currColor = sr.color;
-        sr.color = new Vector4(150, 0, 0, 1);
-        Invoke("ResetColor", 0.3f);
+        //currColor = sr.color;
+
+        //Invoke("ResetColor", 0.3f);
+        sr.material = flashMaterial;
+        yield return new WaitForSeconds(0.3f);
+        sr.material = defaultMaterial;
+        flashRoutine = null;
     }
     public void ResetColor()
     {
         // sr.color = orgColor;
-        sr.color = currColor;
+        sr.material = defaultMaterial;
     }
 
     public void TakeDamage(float damage)
     { //method invoked by bullets and sort
         hitpoints -= damage;
-        FlashRed();     
+        if (flashRoutine != null)
+        {
+            StopCoroutine(flashRoutine);
+        }
+        flashRoutine = StartCoroutine(FlashRed());     
     }
 
     public virtual void Death()
@@ -107,6 +120,7 @@ public abstract class AbstractEnemy : MonoBehaviour
         // add drop chance
         Instantiate(xpDrop, transform.position, transform.rotation);
         GameObject dp = Instantiate(DeathParticles, transform.position, transform.rotation);
+        ResetColor();
         //dp.GetComponent<ParticleSystem>().startColor = spriteColor;
         Destroy(gameObject);
     }

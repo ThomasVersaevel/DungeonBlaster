@@ -117,12 +117,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f78d639dfd472548b648bf46bc46f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currColor: {r: 0, g: 0, b: 0, a: 0}
+  flashMaterial: {fileID: 2100000, guid: 8dbdca584c731884cb515f6a66039641, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   rb: {fileID: 4472043079577599870}
   sr: {fileID: 4472043079577599866}
   xpDrop: {fileID: 4957943886400040943, guid: 8c16533bca6f90443bb9df97120c4d2e, type: 3}
   DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
     type: 3}
+  spriteColor: {r: 0, g: 0, b: 0, a: 0}
   ms: 0
   maxHP: 0
   hitpoints: 0

@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,12 +165,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b694ed72b6f9b9f4184e5f6ff0440608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currColor: {r: 0, g: 0, b: 0, a: 0}
+  flashMaterial: {fileID: 2100000, guid: 8dbdca584c731884cb515f6a66039641, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   rb: {fileID: 2840755863856915136}
   sr: {fileID: 2840755863856915140}
   xpDrop: {fileID: 2398759924850089809, guid: 87c95e7020e11b047a964bbd45de41d9, type: 3}
   DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
     type: 3}
+  spriteColor: {r: 0, g: 0, b: 0, a: 0}
   ms: 0
   maxHP: 50
   hitpoints: 50

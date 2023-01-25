@@ -26,17 +26,17 @@ public class Slime : AbstractEnemy
         SlimeTrail = transform.GetChild(0).GetComponent<TrailRenderer>();
         if (stage == 1)
         {
-            //hitpoints = maxHP;
+            hitpoints = maxHP;
             SlimeTrail.startWidth = .5f;
             transform.localScale = new Vector3(size, size, size);
         } else if (stage == 2)
         {
-            hitpoints = Mathf.Ceil( maxHP/2 );
+            hitpoints = Mathf.Ceil( maxHP/ 2f );
             SlimeTrail.startWidth = 0.3f;
             transform.localScale = new Vector3(size-0.5f, size - 0.5f, size - 0.5f);
         } else if (stage == 3)
         {
-            hitpoints = hitpoints = Mathf.Ceil(maxHP / 5); ;
+            hitpoints = hitpoints = Mathf.Ceil(maxHP / 5f); ;
             SlimeTrail.startWidth = 0.2f;
             transform.localScale = new Vector3(size - 1f, size - 1f, size - 1f);
         } 
@@ -46,7 +46,6 @@ public class Slime : AbstractEnemy
     void Update()
     {
         UpdateAbstract();
-
     }
 
     public override void Death() //activate particles, spawn two smaller slimes, destroy big slime
@@ -62,10 +61,10 @@ public class Slime : AbstractEnemy
             GameObject childSlime = Instantiate(slime, transform.position - playerVector.normalized, Quaternion.identity);
             GameObject childSlime2 = Instantiate(slime, transform.position - playerVector.normalized, Quaternion.identity);
             Slime slimeScript = childSlime.GetComponent<Slime>();
-            slimeScript.SetupSlimeStage(stage);
+            //slimeScript.SetupSlimeStage(stage, maxHP);
             //slimeScript.ResetColor();
             Slime slimeScript2 = childSlime2.GetComponent<Slime>();
-            slimeScript2.SetupSlimeStage(stage);
+            //slimeScript2.SetupSlimeStage(stage, maxHP);
             //slimeScript2.ResetColor(); //workaround for the red slime spawning every time
             Destroy(gameObject);
         }
