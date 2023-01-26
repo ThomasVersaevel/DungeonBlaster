@@ -121,7 +121,8 @@ public abstract class AbstractEnemy : MonoBehaviour
         Instantiate(xpDrop, transform.position, transform.rotation);
         GameObject dp = Instantiate(DeathParticles, transform.position, transform.rotation);
         ResetColor();
-        //dp.GetComponent<ParticleSystem>().startColor = spriteColor;
+        var main = dp.GetComponent<ParticleSystem>().main;
+        main.startColor = spriteColor;
         Destroy(gameObject);
     }
 
