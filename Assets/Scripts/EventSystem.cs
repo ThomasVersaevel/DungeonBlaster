@@ -17,6 +17,8 @@ public class EventSystem : MonoBehaviour
     public GameObject PauseOverlay;
     private bool paused = false;
 
+    [SerializeField] private GameObject Hotbar;
+
 
     // Enemy prefabs per level
     public GameObject[] enemies1;
@@ -120,13 +122,14 @@ public class EventSystem : MonoBehaviour
         paused = true;
         // Activate pause overlay
         PauseOverlay.SetActive(true);
-
+        Hotbar.transform.position += new Vector3(0, 1.8f, 0);
     }
     public void ResumeGame()
     {
         Time.timeScale = 1;
         paused = false;
         PauseOverlay.SetActive(false);
+        Hotbar.transform.position -= new Vector3(0, 1.8f, 0);
     }
 
     // Spawn enemy units around the players view (>8 units distance)
