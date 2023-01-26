@@ -15,6 +15,7 @@ public class EventSystem : MonoBehaviour
     private List<GameObject> activeUnits;
     public GameObject DeathParticles;
     public GameObject PauseOverlay;
+    public GameObject QuitPanel;
     private bool paused = false;
 
     [SerializeField] private GameObject Hotbar;
@@ -130,6 +131,10 @@ public class EventSystem : MonoBehaviour
         paused = false;
         PauseOverlay.SetActive(false);
         Hotbar.transform.position -= new Vector3(0, 1.8f, 0);
+    }
+    public void QuitGame()
+    {
+        QuitPanel.SetActive(!QuitPanel.activeSelf);
     }
 
     // Spawn enemy units around the players view (>8 units distance)
