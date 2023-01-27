@@ -41,6 +41,7 @@ public class EventSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 144;
         spawnCountdown = spawnDelay;
         bossCountdown = bossDelay;
         portals = GameObject.FindGameObjectsWithTag("SpawnPortal");
