@@ -42,9 +42,8 @@ public abstract class AbstractEnemy : MonoBehaviour
         ResetColor();
         //spriteColor = sr.sprite.texture.GetPixel(12, 12);
         //aiPath = gameObject.GetComponent<AIPathing>();
-        currColor = sr.color;
         defaultMaterial = sr.material;
-        //orgColor = sr.color;
+        //spriteColor = sr.sprite.texture.GetPixel(16, 16);
     }
     public void UpdateAbstract()
     {
@@ -101,7 +100,6 @@ public abstract class AbstractEnemy : MonoBehaviour
     }
     public void ResetColor()
     {
-        // sr.color = orgColor;
         sr.material = defaultMaterial;
     }
 

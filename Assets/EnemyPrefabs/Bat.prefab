@@ -124,7 +124,7 @@ MonoBehaviour:
   xpDrop: {fileID: 4957943886400040943, guid: 8c16533bca6f90443bb9df97120c4d2e, type: 3}
   DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
     type: 3}
-  spriteColor: {r: 0, g: 0, b: 0, a: 0}
+  spriteColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0.5882353}
   ms: 0
   maxHP: 0
   hitpoints: 0

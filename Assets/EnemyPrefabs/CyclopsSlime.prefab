@@ -258,7 +258,7 @@ MonoBehaviour:
   xpDrop: {fileID: 7023562538065777208, guid: 24c600bf6d01991469599306e6161824, type: 3}
   DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
     type: 3}
-  spriteColor: {r: 0, g: 0, b: 0, a: 0}
+  spriteColor: {r: 0.18405126, g: 0.8301887, b: 0.4068573, a: 0.5686275}
   ms: 2.5
   maxHP: 20
   hitpoints: 20

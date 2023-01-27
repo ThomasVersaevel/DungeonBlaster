@@ -48,6 +48,7 @@ public abstract class AWeapon : MonoBehaviour
         } else
         {
             attackTimer -= Time.deltaTime;
+            // adjust UIitem cooldown fill here
         }
     }
     public void UpdateMeleeRotation(float offsetAngle)
