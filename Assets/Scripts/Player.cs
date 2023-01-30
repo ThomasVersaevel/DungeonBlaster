@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
+    private CharacterController controller;
     public Camera camera;
     public RectTransform canvasRect;
     public GameObject SpotlightObj;
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        controller = gameObject.AddComponent<CharacterController>();
         health = 6;
         maxHealth = 6;
         ms = 4;
@@ -177,6 +178,13 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        controller.Move(move * Time.deltaTime * ms);
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
+
         if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
         { //x
             rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * ms, rb.velocity.y / 1.5f);

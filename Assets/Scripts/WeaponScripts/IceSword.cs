@@ -23,8 +23,11 @@ public class IceSword : AWeapon
 
     // Instantiate projectile
     // whip sword 
-    private void OnMouseDown()
+    public override void Shoot(Vector3 mousePos)
     {
-        Vector3 mousePos = Input.mousePosition;
+        
+            int angleOffset = 8;
+            base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mousePos);
+        
     }
 }

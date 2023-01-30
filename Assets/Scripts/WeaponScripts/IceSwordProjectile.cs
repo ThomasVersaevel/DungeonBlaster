@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knife : AWeapon
+public class IceSwordProjectile : AWeapon
 {
     private float rotation;
     private bool attackAnim = false;
@@ -26,9 +26,10 @@ public class Knife : AWeapon
 
     public override void Shoot(Vector3 mousePos)
     {
-        //rotation += 500 * Time.deltaTime;
-        //gameObject.transform.rotation = Quaternion.Euler(0, 0, rotation);
-        for (int i = 0; i < level; i++) { // one knife per lvl
+        rotation += 500 * Time.deltaTime;
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, rotation);
+        for (int i = 0; i < level; i++)
+        { // one knife per lvl
             int angleOffset = 8 + level * 2;
             base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mousePos);
         }
