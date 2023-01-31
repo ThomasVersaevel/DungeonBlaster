@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxColl;
 
     public GameObject XpBar; // slider
-    private float speed = 5.81f; // xp bar move speed
     public TMP_Text levelText;
     private int level = 1;
     private int curXP;
