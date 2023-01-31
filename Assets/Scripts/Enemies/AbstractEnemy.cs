@@ -82,10 +82,6 @@ public abstract class AbstractEnemy : MonoBehaviour
         {
             sr.flipX = false;
         }
-
-        // all done by AIPath
-        // rb.velocity = playerVector.normalized * ms;
-        // direction = playerVector; //this is for sprite rotation
     }
 
     protected virtual IEnumerator FlashRed()

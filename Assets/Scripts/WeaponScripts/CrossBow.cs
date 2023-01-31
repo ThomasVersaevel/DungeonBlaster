@@ -2,38 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrossBow: AWeapon 
-{
-    
-   // Start is called before the first frame update
+public class CrossBow: AWeapon
+{ 
+    // Start is called before the first frame update
     void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        auS = gameObject.GetComponent<AudioSource>();
-        attackSpeed = 0.5f;
-        projectileSpeed = 8;
-        damage = 1f;
+        //auS = gameObject.GetComponent<AudioSource>();
+        attackSpeed = 4.5f;
+        projectileSpeed = 7;
+        damage = 3f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateRotation();
-        level = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getLevel();
-    }
-    public override void Shoot(Vector3 mousePos)
-    {
-        var startPos = Camera.main.WorldToScreenPoint(transform.position);
-        float angle = Mathf.Atan2(mousePos.x - startPos.x, mousePos.y - startPos.y) * Mathf.Rad2Deg;
-
-        for (int i = 0; i < level; i++)
-        { // one knife per lvl
-            int angleOffset = 8 + level * 2;
-
-            GameObject proj = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, angle))) as GameObject;
-            proj.GetComponent<Rigidbody2D>().velocity = mousePos.normalized * projectileSpeed;
-            proj.GetComponent<AProjectile>().damage = damage;
-            //base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mousePos);
+        // auto fire weapon fires when ready, also only rotate weapon when not shooting
+        if (attackTimer < 0)
+        {
+            attackTimer = attackSpeed;
+            Shoot(mousePos);
+            AttackAnimation();
         }
+        else if (attackTimer < 0.15f) // swipe  the sword to show attack
+        {
+            AttackAnimation();
+        }
+        else
+        {
+            sr.enabled = false;
+            UpdateRotation();
+        }
+        sr.enabled = attackTimer < 1.55f;
+        attackTimer -= Time.deltaTime;
+    }
+
+    private void AttackAnimation()
+    {
+        //gameObject.transform.position -= mousePos * Time.deltaTime;
+    }
+
+    // Pull back crossbow and shoot piercing arrow
+    public override void Shoot(Vector3 mPos)
+    {
+        base.Shoot(mPos);
+
     }
 }

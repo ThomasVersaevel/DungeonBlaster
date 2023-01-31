@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7742140988619619090}
   - component: {fileID: 7510132442195821656}
   - component: {fileID: 7051459235598670206}
-  - component: {fileID: 8521040557733739899}
+  - component: {fileID: 4980384677053441987}
   m_Layer: 9
-  m_Name: KnifeProjectile
+  m_Name: CrossProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_SortingLayerID: 362593285
   m_SortingLayer: 5
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 54ccf73030a57364ea77b4bc305b9e77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a83acf9ec26ce6409debd3d39bd1423, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25, y: 0}
+  m_Offset: {x: -0.000000014901161, y: 0.014999986}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.2}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &7051459235598670206
 Rigidbody2D:
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8521040557733739899
+--- !u!114 &4980384677053441987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9095334931730920099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffda4e85e18b17d4fbf6af4e97ca287a, type: 3}
+  m_Script: {fileID: 11500000, guid: d301d8a2c539c72409de783ac3003bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  lifeTime: 2

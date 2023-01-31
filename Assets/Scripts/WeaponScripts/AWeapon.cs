@@ -6,13 +6,14 @@ public abstract class AWeapon : MonoBehaviour
 {
     protected SpriteRenderer sr;
     private float angle;
+    protected Vector3 mousePos;
     public GameObject projectile;
     public float attackSpeed;
     public float projectileSpeed;
     public float attackTimer;
     public float damage;
     protected AudioSource auS;
-    protected int level = 1;
+    public int itemLevel = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -24,65 +25,29 @@ public abstract class AWeapon : MonoBehaviour
     // Update is called once per frame
     protected virtual void UpdateRotation()
     {
-        Vector3 mousePos = Input.mousePosition;
-
+        mousePos = Input.mousePosition;
         Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
-        mousePos.x = mousePos.x - objectPos.x;
-        mousePos.y = mousePos.y - objectPos.y;
-
+        mousePos -= objectPos;
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
        
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        if (angle < 0)
-        {
-            sr.flipX = false;
-        } else
-        {
-            sr.flipX = true;
-        }
 
-        if (Input.GetMouseButtonDown(0) && attackTimer < 0)
-        {
-            attackTimer = attackSpeed;
-            Shoot(mousePos);
-        } else
-        {
-            attackTimer -= Time.deltaTime;
-            // adjust UIitem cooldown fill here
-        }
+        sr.flipX = angle > 0;
     }
-    public void UpdateMeleeRotation(float offsetAngle)
+    protected virtual void UpdateRotation(float offsetAngle)
     {
-        Vector3 mousePos = Input.mousePosition;
-
+        mousePos = Input.mousePosition;
         Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
-        mousePos.x = mousePos.x - objectPos.x;
-        mousePos.y = mousePos.y - objectPos.y;
-
+        mousePos -= objectPos;
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90+offsetAngle));
-        if (angle < 90)
-        {
-            sr.flipX = false;
-        }
-        else
-        {
-            sr.flipX = true;
-        }
-        if (Input.GetMouseButtonDown(0) && attackTimer < 0)
-        {
-            attackTimer = attackSpeed;
-            Shoot(mousePos);
-        }
-        else
-        {
-            attackTimer -= Time.deltaTime;
-        }
+
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - offsetAngle));
+        sr.flipX = angle > 0 + offsetAngle;
     }
-    public virtual void Shoot(Vector3 mousePos)
+    public virtual void Shoot(Vector3 mPos)
     {
-        GameObject proj = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, angle-90))) as GameObject;
-        proj.GetComponent<Rigidbody2D>().velocity = mousePos.normalized * projectileSpeed;
+        GameObject proj = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, angle))) as GameObject;
+        proj.GetComponent<Rigidbody2D>().velocity = mPos.normalized * projectileSpeed;
         proj.GetComponent<AProjectile>().damage = damage;
         //auS.Play();
     }

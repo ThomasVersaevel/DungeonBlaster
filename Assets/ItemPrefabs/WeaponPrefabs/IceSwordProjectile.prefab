@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7742140988619619090}
   - component: {fileID: 7510132442195821656}
   - component: {fileID: 7051459235598670206}
+  - component: {fileID: 8824568053979041435}
   m_Layer: 9
-  m_Name: CrossBowArrow
+  m_Name: IceSwordProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,9 +74,9 @@ SpriteRenderer:
   m_SortingLayerID: 362593285
   m_SortingLayer: 5
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 7a83acf9ec26ce6409debd3d39bd1423, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e81ac329052eb724cb46b659c1217c15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -131,3 +132,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8824568053979041435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095334931730920099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859ee250046af134090c6557d8add510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  attackSpeed: 0
+  projectileSpeed: 0
+  attackTimer: 0
+  damage: 0

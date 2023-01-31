@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 736424954608169384}
   - component: {fileID: 736424954608169386}
-  - component: {fileID: 736424954608169385}
   - component: {fileID: 1336251203272633334}
+  - component: {fileID: -2358496952381052520}
   m_Layer: 0
   m_Name: IceSword
   m_TagString: Untagged
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 362593285
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 6e8c71a0f9db5db4baf41145257d28fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,25 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &736424954608169385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736424954608160343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddf5c204fc50cc44cb3ce2af05b943bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 736424954608169386}
-  projectile: {fileID: 2809141454066270171, guid: 78bf31616ad56e242a2d52b5231dc83a,
-    type: 3}
-  attackSpeed: 0.5
-  projectileSpeed: 0
-  attackTimer: 0
-  damage: 0
 --- !u!82 &1336251203272633334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -199,3 +180,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2358496952381052520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736424954608160343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b71f7ac5ac9ae4192629f29c188d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  attackSpeed: 0
+  projectileSpeed: 0
+  attackTimer: 0
+  damage: 0

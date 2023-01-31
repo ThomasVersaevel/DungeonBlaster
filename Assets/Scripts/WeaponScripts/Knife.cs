@@ -19,18 +19,26 @@ public class Knife : AWeapon
     // Update is called once per frame
     void Update()
     {
-        UpdateMeleeRotation(0);
-        level = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getLevel();
-
+        if (Input.GetMouseButtonDown(0) && attackTimer < 0)
+        {
+            attackTimer = attackSpeed;
+            Shoot(mousePos);
+        }
+        else
+        {
+            attackTimer -= Time.deltaTime;
+            // adjust UIitem cooldown fill here
+        }
+        UpdateRotation(90);
+        //temporary solution
+        itemLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getLevel();
     }
 
-    public override void Shoot(Vector3 mousePos)
+    public override void Shoot(Vector3 mPos)
     {
-        //rotation += 500 * Time.deltaTime;
-        //gameObject.transform.rotation = Quaternion.Euler(0, 0, rotation);
-        for (int i = 0; i < level; i++) { // one knife per lvl
-            int angleOffset = 8 + level * 2;
-            base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mousePos);
+        for (int i = 0; i < itemLevel; i++) { // one knife per lvl
+            int angleOffset = 8 + itemLevel * 2;
+            base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mPos);
         }
     }
 }

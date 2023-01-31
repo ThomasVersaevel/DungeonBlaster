@@ -7,17 +7,6 @@ public abstract class AProjectile : MonoBehaviour
 
     public float damage;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Enemy")
@@ -43,7 +32,7 @@ public abstract class AProjectile : MonoBehaviour
         }
     }
     // method to be overriden by exploding projectiles and such
-    private void EnemyHit(GameObject enemy)
+    protected virtual void EnemyHit(GameObject enemy)
     {
         enemy.GetComponent<AbstractEnemy>().TakeDamage(damage);
         Destroy(gameObject.GetComponent<BoxCollider2D>());
