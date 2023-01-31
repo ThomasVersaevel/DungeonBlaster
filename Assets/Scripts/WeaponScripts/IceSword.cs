@@ -25,9 +25,7 @@ public class IceSword : AWeapon
     // whip sword 
     public override void Shoot(Vector3 mousePos)
     {
-        
-            int angleOffset = 8;
-            base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mousePos);
-        
+        int angleOffset = 8;
+        base.Shoot(Quaternion.AngleAxis(Random.Range(-angleOffset, angleOffset), Vector3.back) * mousePos);
     }
 }

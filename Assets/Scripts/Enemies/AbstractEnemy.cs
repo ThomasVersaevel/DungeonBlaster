@@ -126,6 +126,7 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
+        //if (coll.gameObject.tag != "Enemy")print("Collided with: " + coll.gameObject.tag);
         if (coll.gameObject.tag == "Player")
         { //when hitting player, already handled in player
             coll.gameObject.GetComponent<Player>().TakeDamage();

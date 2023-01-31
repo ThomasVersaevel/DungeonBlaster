@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private CharacterController controller;
     public Camera camera;
     public RectTransform canvasRect;
     public GameObject SpotlightObj;
@@ -36,7 +35,6 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller = gameObject.AddComponent<CharacterController>();
         health = 6;
         maxHealth = 6;
         ms = 4;
@@ -178,47 +176,20 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        controller.Move(move * Time.deltaTime * ms);
-        if (move != Vector3.zero)
+        Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
+        
+        // Move character independendant of frame rate and without physics. Also ignore deadzone
+        if (Mathf.Abs( Input.GetAxisRaw("Horizontal") ) > 0.5f || Mathf.Abs(Input.GetAxisRaw("Vertical") ) > 0.5f )
         {
-            gameObject.transform.forward = move;
-        }
+            gameObject.transform.position += move * Time.deltaTime * ms;
 
-        if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
-        { //x
-            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * ms, rb.velocity.y / 1.5f);
-        }
-        if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
-        {//y
-            rb.velocity = new Vector2(rb.velocity.x / 1.5f, Input.GetAxisRaw("Vertical") * ms);
-        }
-        if (Input.GetAxisRaw("Horizontal") <= 0.5f && Input.GetAxisRaw("Horizontal") >= -0.5f)
-        { //x standstill
-            rb.velocity = new Vector2(0f, rb.velocity.y);
-        }
-        if (Input.GetAxisRaw("Vertical") <= 0.5f && Input.GetAxisRaw("Vertical") >= -0.5f)
-        {//y standstill
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-        }
-
-        if (Input.GetAxisRaw("Horizontal") > 0.5f)
-        {
-            sr.flipX = true;
+            anim.SetBool("isMoving", true);
         }
         else
-        {
-            sr.flipX = false;
-        }
-
-        if (rb.velocity.Equals(Vector3.zero))
         {
             anim.SetBool("isMoving", false);
         }
-        else
-        {
-            anim.SetBool("isMoving", true);
-        }
+        sr.flipX = Input.GetAxisRaw("Horizontal") > 0.5f;
     }
 
 
