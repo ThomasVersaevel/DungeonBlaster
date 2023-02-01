@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6658019069293836052}
   - component: {fileID: 7742140988619619090}
-  - component: {fileID: 7510132442195821656}
   - component: {fileID: 7051459235598670206}
-  - component: {fileID: 4980384677053441987}
+  - component: {fileID: 8520772341531924551}
+  - component: {fileID: 4399111304860919427}
   m_Layer: 9
-  m_Name: CrossProjectile
+  m_Name: FlameAxeProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_SortingLayerID: 362593285
   m_SortingLayer: 5
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 7a83acf9ec26ce6409debd3d39bd1423, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cffeb2dd152f02e4e933b2c11a235113, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -85,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7510132442195821656
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9095334931730920099}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.015}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.1}
-  m_EdgeRadius: 0
 --- !u!50 &7051459235598670206
 Rigidbody2D:
   serializedVersion: 4
@@ -132,7 +106,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4980384677053441987
+--- !u!58 &8520772341531924551
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095334931730920099}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!114 &4399111304860919427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,8 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9095334931730920099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d301d8a2c539c72409de783ac3003bfa, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bbebdcbff86ff44fa7fbae72c9dde88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  lifeTime: 2

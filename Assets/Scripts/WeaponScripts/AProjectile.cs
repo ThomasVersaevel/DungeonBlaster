@@ -25,7 +25,7 @@ public abstract class AProjectile : MonoBehaviour
         {
             EnemyHit(coll.gameObject);
         }
-        else if (coll.gameObject.tag == "Tile")
+        else if (coll.gameObject.tag == "Tile") // TODO decide on wall collision
         {
             //Destroy(gameObject.GetComponent<BoxCollider2D>());
             //Destroy(gameObject);

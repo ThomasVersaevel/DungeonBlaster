@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2514170029382600955}
   - component: {fileID: 2514170029382600952}
+  - component: {fileID: -6072363066083820059}
   m_Layer: 0
   m_Name: flameaxe
   m_TagString: Untagged
@@ -143,11 +144,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 362593285
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b67f1066c2644c247baf3a25bb04b216, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.25, y: 1.25}
@@ -156,3 +157,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6072363066083820059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514170029382600954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b25d7a9bb06a247afa4051ebc1602e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 9095334931730920099, guid: e1d47e0b83702644fbd6cc75a3a99640,
+    type: 3}
+  attackSpeed: 0
+  projectileSpeed: 0
+  attackTimer: 0
+  damage: 0
+  itemLevel: 1
