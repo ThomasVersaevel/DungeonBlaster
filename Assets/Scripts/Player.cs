@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Camera camera;
     public RectTransform canvasRect;
     public GameObject SpotlightObj;
+    public GameObject WeaponBox;
     private Light2D Spotlight;
 
     private GameObject healthContainer;
@@ -84,6 +85,7 @@ public class Player : MonoBehaviour
             { //play death animation
                 anim.SetBool("death", true);
                 Destroy(rb);
+                WeaponBox.SetActive(false);
             }
             Invoke("EndInvincibilityFrames", 0.5f);
             invincible = true;

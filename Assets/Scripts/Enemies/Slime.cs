@@ -13,12 +13,12 @@ public class Slime : AbstractEnemy
     public float size;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         SetupSlimeStage(stage);
         gameObject.GetComponent<ParticleSystem>().Play();
+        base.Start();
     }
 
     public void SetupSlimeStage(int stage)

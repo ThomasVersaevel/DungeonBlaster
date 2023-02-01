@@ -7,13 +7,8 @@ public abstract class AbstractEnemy : MonoBehaviour
     private Color currColor;
     [SerializeField] private Material flashMaterial;
     [SerializeField] private Material defaultMaterial;
-    public Rigidbody2D rb;
-    public SpriteRenderer sr;
-    private bool isMoving;
-    private float delay = 0.4f;
-    private float delayCountdown;
-    private float moveTime = 2f;
-    private float movementTimer;
+    protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
     protected Vector3 direction;
     public GameObject xpDrop;
     public GameObject DeathParticles;
@@ -33,17 +28,12 @@ public abstract class AbstractEnemy : MonoBehaviour
     protected bool attacking = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
         maxHP = hitpoints;
-        delayCountdown = delay;
-        movementTimer = moveTime;
         ResetColor();
-        //spriteColor = sr.sprite.texture.GetPixel(12, 12);
-        //aiPath = gameObject.GetComponent<AIPathing>();
-        defaultMaterial = sr.material;
-        //spriteColor = sr.sprite.texture.GetPixel(16, 16);
     }
     public void UpdateAbstract()
     {
@@ -74,17 +64,11 @@ public abstract class AbstractEnemy : MonoBehaviour
     {
         Vector2 moveDir = playerVector.normalized * ms * Time.deltaTime;
         transform.position += new Vector3(moveDir.x, moveDir.y, 0);
-        if (moveDir.x > 0)
-        {
-            sr.flipX = true;
-        }
-        else
-        {
-            sr.flipX = false;
-        }
+
+        sr.flipX = moveDir.x > 0;
     }
 
-    protected virtual IEnumerator FlashRed()
+    private IEnumerator FlashRed()
     {
         //currColor = sr.color;
 
@@ -99,7 +83,7 @@ public abstract class AbstractEnemy : MonoBehaviour
         sr.material = defaultMaterial;
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     { //method invoked by bullets and sort
         hitpoints -= damage;
         if (flashRoutine != null)

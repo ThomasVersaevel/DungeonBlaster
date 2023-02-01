@@ -9,14 +9,14 @@ public class Skeleton : AbstractEnemy
     private Animator anim;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         ms = 2;
-        rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         hitpoints = 3;
         attackRange = 1.3f; //1.3 is melee
         attackSpeed = 1.6f;
+        base.Start();
     }
 
     // Update is called once per frame
