@@ -153,7 +153,6 @@ public class Player : MonoBehaviour
             curXP -= reqXP; // carry over xp
             LevelUp();
         }
-        //XpBar.GetComponent<Slider>().value = (float)curXP / (float)reqXP;
     }
     private void LevelUp() // vampsurvivors uses 10, 13, 16 reqXP increments
     {
@@ -171,6 +170,7 @@ public class Player : MonoBehaviour
         }
         level++;
         // UI changes:
+        //levelUpScreen
 
         levelText.text = level.ToString();
     }

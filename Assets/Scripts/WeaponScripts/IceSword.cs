@@ -12,6 +12,7 @@ public class IceSword : AWeapon
         attackSpeed = 2.5f;
         projectileSpeed = 6;
         damage = 1f;
+        attackTimer = 1f;
     }
 
     // Update is called once per frame

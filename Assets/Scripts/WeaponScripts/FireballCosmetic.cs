@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigBat : AbstractEnemy
+public class FireballCosmetic : MonoBehaviour
 {
     // Start is called before the first frame update
-    protected override void Start()
+    void Start()
     {
-        ms = 2.5f;
-        hitpoints = 1;
-        base.Start();
+        Invoke("DestroyThis", 3);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateAbstract();
+        
+    }
+    void DestroyThis()
+    {
+        Destroy(gameObject);
     }
 }

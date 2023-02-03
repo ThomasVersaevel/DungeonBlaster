@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlameAxe : AWeapon
 {
+    [SerializeField] private GameObject fireballCosmetic;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,6 +13,7 @@ public class FlameAxe : AWeapon
         attackSpeed = 8f;
         projectileSpeed = 6;
         damage = 3f;
+        attackTimer = 6f;
     }
 
     // Update is called once per frame
@@ -37,10 +39,11 @@ public class FlameAxe : AWeapon
         attackTimer -= Time.deltaTime;
     }
 
-    // whip sword
+    // rotate axe slowly and spawn the fireballs over 3 seconds
     private void AttackAnimation()
     {
-        gameObject.transform.Rotate(0, 0, -Time.deltaTime * 600);
+        sr.flipX = false;
+        gameObject.transform.Rotate(0, 0, -Time.deltaTime * 200 * (3-attackTimer));
     }
 
     // Instantiate projectiles in an arc

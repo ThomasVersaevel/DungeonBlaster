@@ -70,9 +70,6 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     private IEnumerator FlashRed()
     {
-        //currColor = sr.color;
-
-        //Invoke("ResetColor", 0.3f);
         sr.material = flashMaterial;
         yield return new WaitForSeconds(0.3f);
         sr.material = defaultMaterial;

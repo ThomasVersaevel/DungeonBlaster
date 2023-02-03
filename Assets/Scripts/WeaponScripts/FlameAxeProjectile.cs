@@ -6,7 +6,7 @@ public class FlameAxeProjectile : AProjectile
 {
     private float rotation;
     private float pulseDelay = 0.8f;
-    private float pulseTimer;
+    private float pulseTimer = 0;
     private CircleCollider2D coll;
 
     private void Start()
