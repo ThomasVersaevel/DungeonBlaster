@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 143418951378171568}
   - component: {fileID: 143418951378171569}
   - component: {fileID: 696080213133199641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireballCosmetic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

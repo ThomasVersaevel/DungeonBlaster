@@ -42,7 +42,8 @@ public class Snake : AbstractEnemy
 
     private void Attack()
     {
-        GameObject proj = Instantiate(Projectile, transform.position, transform.rotation);
+        GameObject proj = Instantiate(Projectile, transform.position, 
+            Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(playerVector.y , playerVector.x) * Mathf.Rad2Deg)));
         proj.GetComponent<Rigidbody2D>().velocity = playerVector.normalized * projectileSpeed;
     }
 }

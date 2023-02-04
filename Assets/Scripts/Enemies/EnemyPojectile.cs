@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPojectile : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Player")
         {

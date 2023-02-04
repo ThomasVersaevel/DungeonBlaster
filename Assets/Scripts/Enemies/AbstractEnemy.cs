@@ -9,7 +9,6 @@ public abstract class AbstractEnemy : MonoBehaviour
     [SerializeField] private Material defaultMaterial;
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
-    protected Vector3 direction;
     public GameObject xpDrop;
     public GameObject DeathParticles;
     public Color spriteColor;

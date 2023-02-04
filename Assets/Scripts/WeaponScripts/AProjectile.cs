@@ -7,7 +7,7 @@ public abstract class AProjectile : MonoBehaviour
 
     public float damage;
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    private void OnCollisionEnter2D(Collision2D coll) // this applies physics
     {
         if (coll.gameObject.tag == "Enemy")
         {
