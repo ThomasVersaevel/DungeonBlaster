@@ -11,13 +11,14 @@ public class InventorySlot
     public InventoryItemData ItemData => itemData;
     public int StackSize => stackSize;
 
-    // Start is called before the first frame update
+    // Constructor for full slot
     public InventorySlot(InventoryItemData source, int amount)
     {
         itemData = source;
         stackSize = amount;
     }
 
+    // Constructor for empty slot
     public InventorySlot() {
         ClearSlot();
     }

@@ -9,7 +9,7 @@ public class EventSystem : MonoBehaviour
 {
     public bool spawning; // debug
     public int levelSelector;
-
+    private static float badLuckMultiplier = 0;
 
     private GameObject[] portals;
     private List<GameObject> activeUnits;
@@ -192,5 +192,15 @@ public class EventSystem : MonoBehaviour
     public void MakeDeathParticles(Vector3 pos)
     {
         Instantiate(DeathParticles, pos, new Quaternion(0, 0 ,0, 0));
+    }
+
+    public static float PseudoRandomGenerator(float chancePercent, float missPercent)
+    {
+        int roll = Random.Range(0, 100); // roll percentage
+        if (roll < chancePercent) // hit (exclusive since Random.Range is 0-99)
+        {
+
+        }
+        return roll;
     }
 }
