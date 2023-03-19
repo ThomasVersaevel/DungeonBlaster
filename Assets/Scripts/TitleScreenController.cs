@@ -35,5 +35,4 @@ public class TitleScreenController : MonoBehaviour
         leaderboard.text = scores;
         buttonText.text = "Start run " + currRun;
     }
-
 }

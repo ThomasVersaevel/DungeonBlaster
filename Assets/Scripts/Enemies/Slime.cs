@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Slime : AbstractEnemy
 {
-
     public int stage = 1;
     public int maxStage;
     public GameObject slime;

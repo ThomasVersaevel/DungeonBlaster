@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigBat : AbstractEnemy
+public class Bat : AbstractEnemy
 {
     // Start is called before the first frame update
     protected override void Start()
