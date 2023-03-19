@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     public GameObject XpBar; // slider
     public TMP_Text levelText;
+    private bool dead = false;
     private int level = 1;
     private int curXP;
     private int reqXP;
@@ -81,11 +82,10 @@ public class Player : MonoBehaviour
         if (!invincible)
         {
             health--;
-            if (health <= 0)
-            { //play death animation
-                anim.SetBool("death", true);
-                Destroy(rb);
-                WeaponBox.SetActive(false);
+            if (health <= 0 && !dead)
+            {
+                dead = true;
+                Death();
             }
             Invoke("EndInvincibilityFrames", 0.5f);
             invincible = true;
@@ -106,6 +106,19 @@ public class Player : MonoBehaviour
         {
             UpdateUI();
         }
+    }
+
+    /**
+     * Death shows you a game over popup and saves the time and 
+     * weapon data to player preferences.
+     * These are then viewable as high scores in the main menu
+     */
+    void Death()
+    {
+        anim.SetBool("death", true);
+        Destroy(rb);
+        WeaponBox.SetActive(false);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<EventSystem>().GameOver();
     }
 
     void ResetHitbox()

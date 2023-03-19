@@ -46,6 +46,8 @@ public class EventSystem : MonoBehaviour
         bossCountdown = bossDelay;
         portals = GameObject.FindGameObjectsWithTag("SpawnPortal");
         activeUnits = new List<GameObject>();
+        // Increment run nr for saving highscores
+        PlayerPrefs.SetInt("RunNr", PlayerPrefs.GetInt("RunNr") + 1);
 
         if (levelSelector == 1)
         {
@@ -96,6 +98,12 @@ public class EventSystem : MonoBehaviour
         {
             spawnCountdown -= Time.deltaTime;
         }
+    }
+    public void GameOver()
+    {
+        int minutes = Mathf.FloorToInt(timer / 60.0f);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60.0f);
+        PlayerPrefs.SetString("Score", PlayerPrefs.GetString("Score") + "\n" + "Run: " + PlayerPrefs.GetInt("RunNr") + " time survived: " + string.Format("{0:00}:{1:00}", minutes, seconds));
     }
 
     public int GetLevelSelector()

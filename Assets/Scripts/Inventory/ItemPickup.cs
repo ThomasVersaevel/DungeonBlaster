@@ -11,11 +11,27 @@ public class ItemPickup : MonoBehaviour
 
     private CircleCollider2D coll;
 
+    private float timer;
+
     private void Awake()
     {
         coll = gameObject.GetComponent<CircleCollider2D>();
         coll.isTrigger = true;
         coll.radius = PickupRadius;
+        coll.enabled = false;
+    }
+    // On spawning pickup slowly fall down to the ground and then activate collider
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer < 0.5f)
+        {
+            coll.enabled = true;
+        }
+        if (timer < 0.8f)
+        {
+            transform.position += new Vector3(0, -0.5f * Time.deltaTime, 0);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
