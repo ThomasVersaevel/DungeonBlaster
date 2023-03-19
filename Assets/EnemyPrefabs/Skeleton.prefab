@@ -196,7 +196,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &5666088566999026695
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -209,10 +209,11 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &255778515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,8 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 8dbdca584c731884cb515f6a66039641, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
-  rb: {fileID: 5666088566999026693}
-  sr: {fileID: 5666088566999026691}
   xpDrop: {fileID: 7023562538065777208, guid: 24c600bf6d01991469599306e6161824, type: 3}
   DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
     type: 3}

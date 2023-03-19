@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
 [System.Serializable]
 
 public class InventoryHolder : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
     [SerializeField] protected InventorySystem inventorySystem;
-
+    [SerializeField] private GameObject[] weaponArray;
+    [SerializeField] private GameObject WeaponBox;
     public InventorySystem InventorySystem => inventorySystem;
 
     public static UnityAction<InventorySystem> OnDynamicInventoryDisplayRequested;
 
     private void Awake()
     {
-        inventorySystem = new InventorySystem(inventorySize);
+        inventorySystem = new InventorySystem(inventorySize, weaponArray, WeaponBox);
     }
 }

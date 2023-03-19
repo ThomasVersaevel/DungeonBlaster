@@ -9,18 +9,32 @@ public class InventorySystem // fires event when item is added to a slot
 {
     [SerializeField] private List<InventorySlot> inventorySlots;
 
+    // [SerializeField] private GameObject[] weaponArray;
+
+    private Dictionary<int, GameObject> weapons;
+
+    private GameObject weaponBox;
+
+    public Dictionary<int, GameObject> Weapons => weapons;
     public List<InventorySlot> InventorySlots => inventorySlots;
     public int InventorySize => InventorySlots.Count;
 
     public UnityAction<InventorySlot> OnInventorySlotChanged;
 
-    public InventorySystem(int size)
+
+    public InventorySystem(int size, GameObject[] weaponArray, GameObject WeaponBox)
     {
         inventorySlots = new List<InventorySlot>(size);
         for (int i = 0; i < size; i++)
         {
             inventorySlots.Add(new InventorySlot());
         }
+        weapons = new Dictionary<int, GameObject>(weaponArray.Length);
+        for (int i = 0; i < weaponArray.Length; i++)
+        {
+            weapons.Add(i, weaponArray[i]);
+        }
+        weaponBox = WeaponBox;
     }
 
     public bool AddToInventory(InventoryItemData itemToAdd, int amountToAdd)
@@ -41,6 +55,8 @@ public class InventorySystem // fires event when item is added to a slot
         {
             freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
             OnInventorySlotChanged?.Invoke(freeSlot);
+            // Instantiate weapon in the weapon box on player
+            GameObject.Instantiate(weapons[itemToAdd.ID], weaponBox.transform);
             return true;
         }
         return false;

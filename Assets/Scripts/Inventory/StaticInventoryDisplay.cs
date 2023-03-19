@@ -17,7 +17,7 @@ public class StaticInventoryDisplay : InventoryDisplay
             inventorySystem = invHolder.InventorySystem;
             inventorySystem.OnInventorySlotChanged += UpdateSlot;
         }
-        else Debug.Log("No invenotry assigned to this");
+        else Debug.Log("No inventory assigned to this");
 
         AssignSlot(inventorySystem);
     }

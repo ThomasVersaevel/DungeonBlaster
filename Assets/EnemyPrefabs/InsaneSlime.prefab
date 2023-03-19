@@ -195,7 +195,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1378589561
   m_SortingLayer: 2
-  m_SortingOrder: 20
+  m_SortingOrder: 9
   m_Sprite: {fileID: -5659783287845983685, guid: e417bd1caa1c1d3489a9a35ff5340be5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 8dbdca584c731884cb515f6a66039641, type: 2}
-  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  defaultMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   xpDrop: {fileID: 7023562538065777208, guid: 24c600bf6d01991469599306e6161824, type: 3}
   DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
     type: 3}

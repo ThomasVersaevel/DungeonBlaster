@@ -120,14 +120,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 8dbdca584c731884cb515f6a66039641, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
-  rb: {fileID: 3306559639590848249}
-  sr: {fileID: 3306559639590848251}
   xpDrop: {fileID: 2398759924850089809, guid: 87c95e7020e11b047a964bbd45de41d9, type: 3}
   DeathParticles: {fileID: 453379015636368916, guid: 561d822409619dc49bcb1d045c0c9147,
     type: 3}
   spriteColor: {r: 0.5686275, g: 0.4784314, b: 0.04705883, a: 0.70980394}
   ms: 0.5
-  maxHP: 0
+  maxHP: 40
   hitpoints: 3
   attackRange: 0
   attackSpeed: 0
