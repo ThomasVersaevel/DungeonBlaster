@@ -31,8 +31,6 @@ public abstract class AWeapon : MonoBehaviour
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
        
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-        sr.flipX = angle > 0;
     }
     protected virtual void UpdateRotation(float offsetAngle)
     {
@@ -42,7 +40,6 @@ public abstract class AWeapon : MonoBehaviour
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - offsetAngle));
-        sr.flipX = angle > 0 + offsetAngle;
     }
     public virtual void Shoot(Vector3 mPos)
     {

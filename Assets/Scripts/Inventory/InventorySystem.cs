@@ -56,7 +56,8 @@ public class InventorySystem // fires event when item is added to a slot
             freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
             OnInventorySlotChanged?.Invoke(freeSlot);
             // Instantiate weapon in the weapon box on player
-            GameObject.Instantiate(weapons[itemToAdd.ID], weaponBox.transform);
+            var _weapon = GameObject.Instantiate(weapons[itemToAdd.ID], weaponBox.transform);
+            _weapon.transform.position += new Vector3(-0.3f, -0.1f, 0); // position weapon to hand
             return true;
         }
         return false;
