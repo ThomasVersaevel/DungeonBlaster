@@ -1,55 +1,49 @@
 fileFormatVersion: 2
-guid: 90248d7a1600297418956355f85f03e2
+guid: e0e195ddb9575464aa9047973f692eb0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4730699956406178552
-    second: puddle0_0
+      213: 6380992833925677111
+    second: witchStir_0
   - first:
-      213: -8820437040676323594
-    second: puddle0_1
+      213: -259401586967071195
+    second: witchStir_1
   - first:
-      213: 1387282724588283352
-    second: puddle0_2
+      213: -7204539431640930893
+    second: witchStir_2
   - first:
-      213: 6901288118290828654
-    second: puddle0_3
+      213: -8048161089179719977
+    second: witchStir_3
   - first:
-      213: -3023617887921109524
-    second: puddle0_4
+      213: -5604198376130727179
+    second: witchStir_4
   - first:
-      213: 4322406945774705356
-    second: puddle0_5
+      213: -1998154038022115638
+    second: witchStir_5
   - first:
-      213: -7862580033318714255
-    second: puddle0_6
+      213: -5379151231909194023
+    second: witchStir_6
   - first:
-      213: -5930121796460403160
-    second: puddle0_7
+      213: -5022155302831997183
+    second: witchStir_7
   - first:
-      213: -7371046814436180081
-    second: swampTile_0
+      213: -8679232935876699953
+    second: witchStir_8
   - first:
-      213: 3839257975099333806
-    second: swampTile_1
+      213: 5231426613140761783
+    second: witchStir_9
   - first:
-      213: -7202576200725030224
-    second: swampTile_2
+      213: -5624475891118226978
+    second: witchStir_10
   - first:
-      213: 4010842142066814498
-    second: swampTile_3
+      213: 172240737510389262
+    second: witchStir_11
   - first:
-      213: 7824011016304738720
-    second: swampTile_4
+      213: 1202902804390037466
+    second: witchStir_12
   - first:
-      213: -7563652048221924516
-    second: swampTile_5
-  - first:
-      213: 3165188857990030503
-    second: swampTile_6
-  - first:
-      213: -7869167165261659460
-    second: swampTile_7
+      213: 823366155136838108
+    second: witchStir_13
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -152,169 +146,295 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: swampTile_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8fb1cac9f7c4b990800000000000000
-      internalID: -7371046814436180081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: swampTile_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eac91ee79c8c74530800000000000000
-      internalID: 3839257975099333806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: swampTile_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ba1a183b1f4b0c90800000000000000
-      internalID: -7202576200725030224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: swampTile_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22e2f088daf59a730800000000000000
-      internalID: 4010842142066814498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: swampTile_4
+      name: witchStir_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a14691e098749c60800000000000000
-      internalID: 7824011016304738720
+      spriteID: 730047cac27dd8850800000000000000
+      internalID: 6380992833925677111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_5
+      name: witchStir_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c53931d3982880790800000000000000
-      internalID: -7563652048221924516
+      spriteID: 526b7aa81ab666cf0800000000000000
+      internalID: -259401586967071195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_6
+      name: witchStir_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a425871f720deb20800000000000000
-      internalID: 3165188857990030503
+      spriteID: 3b56fb6ee85540c90800000000000000
+      internalID: -7204539431640930893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_7
+      name: witchStir_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb24964e72a1bc290800000000000000
-      internalID: -7869167165261659460
+      spriteID: 7d6625061203f4090800000000000000
+      internalID: -8048161089179719977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f238ebe443e932b0800000000000000
+      internalID: -5604198376130727179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aceed253d712544e0800000000000000
+      internalID: -1998154038022115638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d692fc547a6955b0800000000000000
+      internalID: -5379151231909194023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fbadf4c58bd4ab0800000000000000
+      internalID: -5022155302831997183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8d23e11ab2d8780800000000000000
+      internalID: -8679232935876699953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bca7c099c2c99840800000000000000
+      internalID: 5231426613140761783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed1462e0af8d1f1b0800000000000000
+      internalID: -5624475891118226978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e067827c90ce36200800000000000000
+      internalID: 172240737510389262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad74df23ab191b010800000000000000
+      internalID: 1202902804390037466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witchStir_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9a20dd72f2d6b00800000000000000
+      internalID: 823366155136838108
       vertices: []
       indices: 
       edges: []
@@ -328,7 +448,9 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 2d11ac2f1cdbbff4586b936e70a98a39, type: 3}
+      name: _Emission
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

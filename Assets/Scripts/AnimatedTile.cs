@@ -6,16 +6,11 @@ public class AnimatedTile : MonoBehaviour
 {
     Animator anim;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         anim.SetTrigger("Collision");

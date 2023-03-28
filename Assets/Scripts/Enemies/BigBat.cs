@@ -18,7 +18,7 @@ public class BigBat : AbstractEnemy
     void Update()
     {
         timer += Time.deltaTime;
-        print(timer);
+
         if (timer > 4) // slow down first
         {
             ms = .7f;

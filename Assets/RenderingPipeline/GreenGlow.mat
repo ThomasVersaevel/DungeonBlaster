@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WhiteGlow
+  m_Name: GreenGlow
   m_Shader: {fileID: -6465566751694194690, guid: 7fdbd196a9a7cff47a68def02ea1b424,
     type: 3}
   m_ShaderKeywords: 
@@ -42,5 +42,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_716a718493dc4509954ff64250577756: {r: 1, g: 1, b: 1, a: 0}
+    - Color_716a718493dc4509954ff64250577756: {r: 0.04197399, g: 0.103669286, b: 0.0405875,
+        a: 0}
   m_BuildTextureStacks: []

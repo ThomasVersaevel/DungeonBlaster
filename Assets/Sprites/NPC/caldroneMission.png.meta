@@ -1,60 +1,30 @@
 fileFormatVersion: 2
-guid: 90248d7a1600297418956355f85f03e2
+guid: 4c98c93e21c536c438b04cf1ec6f1957
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4730699956406178552
-    second: puddle0_0
+      213: 1505363438371996392
+    second: caldroneMission_0
   - first:
-      213: -8820437040676323594
-    second: puddle0_1
+      213: 340425293593910124
+    second: caldroneMission_1
   - first:
-      213: 1387282724588283352
-    second: puddle0_2
+      213: 886222321268961380
+    second: caldroneMission_2
   - first:
-      213: 6901288118290828654
-    second: puddle0_3
+      213: 6206950704589088597
+    second: caldroneMission_3
   - first:
-      213: -3023617887921109524
-    second: puddle0_4
+      213: 8611429817068745762
+    second: caldroneMission_4
   - first:
-      213: 4322406945774705356
-    second: puddle0_5
-  - first:
-      213: -7862580033318714255
-    second: puddle0_6
-  - first:
-      213: -5930121796460403160
-    second: puddle0_7
-  - first:
-      213: -7371046814436180081
-    second: swampTile_0
-  - first:
-      213: 3839257975099333806
-    second: swampTile_1
-  - first:
-      213: -7202576200725030224
-    second: swampTile_2
-  - first:
-      213: 4010842142066814498
-    second: swampTile_3
-  - first:
-      213: 7824011016304738720
-    second: swampTile_4
-  - first:
-      213: -7563652048221924516
-    second: swampTile_5
-  - first:
-      213: 3165188857990030503
-    second: swampTile_6
-  - first:
-      213: -7869167165261659460
-    second: swampTile_7
+      213: 1261833600441808489
+    second: caldroneMission_5
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -98,9 +68,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -152,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: swampTile_0
+      name: caldroneMission_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 16
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8fb1cac9f7c4b990800000000000000
-      internalID: -7371046814436180081
+      spriteID: 8e2060a421024e410800000000000000
+      internalID: 1505363438371996392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_1
+      name: caldroneMission_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 16
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eac91ee79c8c74530800000000000000
-      internalID: 3839257975099333806
+      spriteID: c6b1939300f69b400800000000000000
+      internalID: 340425293593910124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_2
+      name: caldroneMission_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 16
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ba1a183b1f4b0c90800000000000000
-      internalID: -7202576200725030224
+      spriteID: 460324b718e7c4c00800000000000000
+      internalID: 886222321268961380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_3
+      name: caldroneMission_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 16
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22e2f088daf59a730800000000000000
-      internalID: 4010842142066814498
+      spriteID: 557a46da7c4832650800000000000000
+      internalID: 6206950704589088597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_4
+      name: caldroneMission_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a14691e098749c60800000000000000
-      internalID: 7824011016304738720
+      spriteID: 224f6961bc1f18770800000000000000
+      internalID: 8611429817068745762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swampTile_5
+      name: caldroneMission_5
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,50 +241,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c53931d3982880790800000000000000
-      internalID: -7563652048221924516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: swampTile_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a425871f720deb20800000000000000
-      internalID: 3165188857990030503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: swampTile_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb24964e72a1bc290800000000000000
-      internalID: -7869167165261659460
+      spriteID: 9667cff59fee28110800000000000000
+      internalID: 1261833600441808489
       vertices: []
       indices: 
       edges: []
