@@ -11,7 +11,6 @@ public class EventSystem : MonoBehaviour
     public int levelSelector;
     private static float badLuckMultiplier = 0;
 
-    private GameObject[] portals;
     private List<GameObject> activeUnits;
     public GameObject DeathParticles;
     public GameObject PauseOverlay;
@@ -22,13 +21,13 @@ public class EventSystem : MonoBehaviour
 
 
     // Enemy prefabs per level
-    public GameObject[] enemies1;
-    public GameObject[] bosses1;
-    public GameObject[] enemies2;
-    public GameObject[] bosses2;
+    public List<GameObject> enemies1;
+    public List<GameObject> bosses1;
+    public List<GameObject> enemies2;
+    public List<GameObject> bosses2;
 
-    public GameObject[] cEnemies;
-    public GameObject[] cBosses;
+    public List<GameObject> currentEnenemies;
+    public List<GameObject> cBosses;
 
     private Vector3 playerPos;
 
@@ -44,17 +43,16 @@ public class EventSystem : MonoBehaviour
         Application.targetFrameRate = 144;
         spawnCountdown = spawnDelay;
         bossCountdown = bossDelay;
-        portals = GameObject.FindGameObjectsWithTag("SpawnPortal");
         activeUnits = new List<GameObject>();
         // Increment run nr for saving highscores
         PlayerPrefs.SetInt("RunNr", PlayerPrefs.GetInt("RunNr") + 1);
 
         if (levelSelector == 1)
         {
-            cEnemies = enemies1;
+            currentEnenemies = enemies1;
             cBosses = bosses1;
         } else if (levelSelector == 2) {
-            cEnemies = enemies2;
+            currentEnenemies = enemies2;
             cBosses = bosses2;
         }
     }
@@ -182,7 +180,7 @@ public class EventSystem : MonoBehaviour
             if (!(direction.x > 75 || direction.y > 75 || direction.x < -75 || direction.y < -75))
             {
                 Vector3 addedRandom = new Vector3(Random.Range(-0.6f, 0.6f), Random.Range(-0.6f, 0.6f), 0);
-                GameObject unit = Instantiate(cEnemies[0], direction+addedRandom, transform.rotation);
+                GameObject unit = Instantiate(currentEnenemies[0], direction+addedRandom, transform.rotation);
                 activeUnits.Add(unit);
 
             }
@@ -199,7 +197,7 @@ public class EventSystem : MonoBehaviour
     // deprecated
     public void MakeDeathParticles(Vector3 pos)
     {
-        Instantiate(DeathParticles, pos, new Quaternion(0, 0 ,0, 0));
+        Instantiate(DeathParticles, pos, new Quaternion(0, 0, 0, 0));
     }
 
     public static float PseudoRandomGenerator(float chancePercent, float missPercent)

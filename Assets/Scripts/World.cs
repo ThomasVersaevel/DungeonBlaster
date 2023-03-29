@@ -12,13 +12,12 @@ public class World : MonoBehaviour
 
     public List<GameObject> CaveList;
 
-    public List<GameObject> FieldList;
+    public List<GameObject> commonFieldTiles;
+    public List<GameObject> rareFieldTiles;
 
     // Swamp Level
     public List<GameObject> commonFloorSwampTiles;
     public List<GameObject> rareFloorSwampTiles;
-
-
 
     // runtime tile lists
     public List<GameObject> WallTiles;
@@ -44,13 +43,18 @@ public class World : MonoBehaviour
 
         if (levelSelector == 1)
         {
-            WallTiles = FieldList;
-            FloorTiles = FieldList;
+            commonFloorIndex = commonFieldTiles.Count;
+            rareFloorIndex = commonFloorIndex + rareFieldTiles.Count;
+
+            commonWallIndex = commonFieldTiles.Count;
+            rareWallIndex = rareFieldTiles.Count + commonFieldTiles.Count;
+            WallTiles = commonFieldTiles.Concat(rareFieldTiles).ToList();
+            FloorTiles = commonFieldTiles.Concat(rareFieldTiles).ToList();
         }
         else if (levelSelector == 2)
         {
             commonFloorIndex = commonFloorSwampTiles.Count;
-            rareFloorIndex = commonFloorIndex + commonFloorSwampTiles.Count;
+            rareFloorIndex = commonFloorIndex + rareFloorSwampTiles.Count;
 
             commonWallIndex = commonFloorSwampTiles.Count;
             rareWallIndex = rareFloorSwampTiles.Count + commonFloorSwampTiles.Count;
@@ -100,6 +104,7 @@ public class World : MonoBehaviour
                 {
                     if (Random.Range(0, 25) <= 1) // Chance for rare tile
                     {
+                        print("commonFloorIndex: " + commonFloorIndex +" "+ rareFloorIndex);
                         currentTile = FloorTiles[Random.Range(commonFloorIndex, rareFloorIndex)];
                     }
                     else

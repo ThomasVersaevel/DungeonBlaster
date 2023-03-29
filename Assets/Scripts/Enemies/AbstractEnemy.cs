@@ -76,7 +76,8 @@ public abstract class AbstractEnemy : MonoBehaviour
     }
     public void ResetColor()
     {
-        sr.material = defaultMaterial;
+        // null reference exception
+       // sr.material = defaultMaterial;
     }
 
     public virtual void TakeDamage(float damage)

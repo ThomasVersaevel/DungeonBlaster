@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 9cfb1b181860b3446b115a192ebc8f2f
+guid: 979b4b373fae8ea4085cb32619cb22ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -495438174975639113
-    second: ChestOpen_0
+      213: 8081416311088344270
+    second: GreenChest_0
   - first:
-      213: 4182582644525950227
-    second: ChestOpen_1
+      213: -3829971354127854197
+    second: GreenChest_1
   - first:
-      213: 2475825086683498764
-    second: ChestOpen_2
+      213: 3585160517142213879
+    second: GreenChest_2
   - first:
-      213: 3798012530523820904
-    second: ChestOpen_3
+      213: -9182137501938395924
+    second: GreenChest_3
   - first:
-      213: 5323597017944248936
-    second: ChestOpen_4
+      213: -751297364612775506
+    second: GreenChest_4
   - first:
-      213: 3933702845568651171
-    second: ChestOpen_5
+      213: 7739469178141705685
+    second: GreenChest_5
   - first:
-      213: 4918010736858956685
-    second: ChestOpen_6
+      213: -7979565340815091336
+    second: GreenChest_6
   - first:
-      213: 2362642519125885583
-    second: ChestOpen_7
+      213: -8872606165130402886
+    second: GreenChest_7
   - first:
-      213: -5938401434793299611
-    second: ChestOpen_8
+      213: -7924883534772646731
+    second: GreenChest_8
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -131,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChestOpen_0
+      name: GreenChest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b1c864da99df19f0800000000000000
-      internalID: -495438174975639113
+      spriteID: ecce7785155f62070800000000000000
+      internalID: 8081416311088344270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_1
+      name: GreenChest_1
       rect:
         serializedVersion: 2
         x: 40
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 315eea241c48b0a30800000000000000
-      internalID: 4182582644525950227
+      spriteID: b859941785539dac0800000000000000
+      internalID: -3829971354127854197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_2
+      name: GreenChest_2
       rect:
         serializedVersion: 2
         x: 80
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0945c18cc5eb5220800000000000000
-      internalID: 2475825086683498764
+      spriteID: 7f4740fce7c01c130800000000000000
+      internalID: 3585160517142213879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_3
+      name: GreenChest_3
       rect:
         serializedVersion: 2
         x: 120
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 863da56164045b430800000000000000
-      internalID: 3798012530523820904
+      spriteID: ce45b2e479e729080800000000000000
+      internalID: -9182137501938395924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_4
+      name: GreenChest_4
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86255ed384731e940800000000000000
-      internalID: 5323597017944248936
+      spriteID: ea18195070bd295f0800000000000000
+      internalID: -751297364612775506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_5
+      name: GreenChest_5
       rect:
         serializedVersion: 2
         x: 200
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3af001a75e1579630800000000000000
-      internalID: 3933702845568651171
+      spriteID: 5d58839463e186b60800000000000000
+      internalID: 7739469178141705685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_6
+      name: GreenChest_6
       rect:
         serializedVersion: 2
         x: 240
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d83090c55b8404440800000000000000
-      internalID: 4918010736858956685
+      spriteID: 87992be9993e24190800000000000000
+      internalID: -7979565340815091336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_7
+      name: GreenChest_7
       rect:
         serializedVersion: 2
         x: 280
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f828bb37adac9c020800000000000000
-      internalID: 2362642519125885583
+      spriteID: ab3267fa3bb2ed480800000000000000
+      internalID: -8872606165130402886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChestOpen_8
+      name: GreenChest_8
       rect:
         serializedVersion: 2
         x: 320
         y: 0
         width: 40
-        height: 40
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 561b979ab5f869da0800000000000000
-      internalID: -5938401434793299611
+      spriteID: 5bcc887b968250290800000000000000
+      internalID: -7924883534772646731
       vertices: []
       indices: 
       edges: []
@@ -328,9 +328,7 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: 958b4ec7bcdf1bb4f8f9d1fdae71d299, type: 3}
-      name: _Emission
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
