@@ -104,7 +104,6 @@ public class World : MonoBehaviour
                 {
                     if (Random.Range(0, 25) <= 1) // Chance for rare tile
                     {
-                        print("commonFloorIndex: " + commonFloorIndex +" "+ rareFloorIndex);
                         currentTile = FloorTiles[Random.Range(commonFloorIndex, rareFloorIndex)];
                     }
                     else
