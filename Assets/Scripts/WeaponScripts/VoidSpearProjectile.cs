@@ -17,7 +17,7 @@ public class VoidSpearProjectile : AProjectile
     void Update()
     {
         // only enable collider every so often to pulse dmg
-        coll.enabled = pulseTimer < 0;
+        // coll.enabled = pulseTimer < 0;
         pulseTimer -= Time.deltaTime;
 
         //if (coll.enabled) print("colliding");

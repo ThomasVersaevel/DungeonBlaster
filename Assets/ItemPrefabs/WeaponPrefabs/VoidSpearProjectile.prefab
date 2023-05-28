@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4902540582404934021}
   - component: {fileID: 5666406061260057577}
   - component: {fileID: 6433132403647900368}
-  - component: {fileID: 1329695445376881684}
+  - component: {fileID: 1052084986833175914}
   m_Layer: 9
   m_Name: VoidSpearProjectile
   m_TagString: Projectile
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 9321a5a42aabfb242971ac31464ee304, type: 3}
-  m_Color: {r: 0.6603774, g: 0.19624422, b: 0.6210093, a: 0.72156864}
+  m_Color: {r: 1, g: 0.19339621, b: 0.93164366, a: 0.72156864}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,7 +123,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1329695445376881684
+--- !u!114 &1052084986833175914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5855190189667958836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bbebdcbff86ff44fa7fbae72c9dde88, type: 3}
+  m_Script: {fileID: 11500000, guid: 38bcbda4c0bdec44f914ad4a24feeed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0

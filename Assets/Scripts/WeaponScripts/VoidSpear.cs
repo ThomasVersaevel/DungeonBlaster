@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class VoidSpear : AWeapon
 {
-
-    [SerializeField] private GameObject fireballCosmetic;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +46,8 @@ public class VoidSpear : AWeapon
     public override void Shoot(Vector3 mPos)
     {
          // instantiate black holes at positions relative to player, they dont move they pulse once and disapear
-         Instantiate(projectile, new Vector3(0, 5, 0), transform.rotation);
-         Instantiate(projectile, new Vector3(5, -4, 0), transform.rotation);
-         Instantiate(projectile, new Vector3(-5, -4, 0), transform.rotation);
+         Instantiate(projectile, transform.position + new Vector3(0, 5, 0), transform.rotation);
+         Instantiate(projectile, transform.position + new Vector3(5, -4, 0), transform.rotation);
+         Instantiate(projectile, transform.position + new Vector3(-5, -4, 0), transform.rotation);
     }
 }
